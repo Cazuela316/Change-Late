@@ -5,18 +5,18 @@
 define e = Character("Eileen", color="#33fff0")
 define a = Character("[Jugador]")
 define n = Character("???")
-
+image bg camino = "Camino_a_la_ula_edit.png"
+image bg entrada_ula = "Entrada_Ula_edit.png"
+image bg entrada_edf = "Entrada_al_edificio_principal_edit.png"
+image bg pasillo_1 = "Pasillo_1.png"
+image bg pasillo_2 = "Pasillo_2.png"
+image bg pasillo_3 = "Pasillo_3.png"
+image bg pasillo_3b = "Pasillo_3b.png"
+      
 
 # El juego comienza aquí.
 
 #label start:  
-
-  #$ Jugador = renpy.input("Cual es tu nombre?")
-
-  #$ Jugador = Jugador.strip()
-
-  #if Jugador == "":
-# $ Jugador = "Jugador"
 
     # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
     # defecto. Es posible añadir un archivo en el directorio 'images' con el
@@ -57,10 +57,9 @@ label start:
             $ player_pronoun_subject = "they"
 
 
-    scene bg BUG
-
+    scene bg camino
     e "Has creado un nuevo juego Ren'Py."
-    e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
+    e "bla bla bla bla bla"
     a "Dafok, ola mi pronombre es: [player_pronoun!c]"
 
     return
