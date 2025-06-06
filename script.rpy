@@ -2,18 +2,25 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
-define e = Character("Eileen", color="#33fff0")
+define c = Character("Catalina", color="#33fff0")
 define a = Character("[Jugador]")
 define n = Character("???")
+define p = Character("Andre", color="#f02626")
+define t = Character("Kevinzo", color="#51ee32")
+define j = Character("Juan II", color="#3d3b96")
 define Cha = 0
 define Int = 0
+define Intro = 0
+define Extro = 0
+define Carrera_jugador = Character("[Carrera]")
 image bg camino = "Camino_a_la_ula_edit.png"
 image bg entrada_ula = "Entrada_Ula_edit.png"
 image bg entrada_edf = "Entrada_al_edificio_principal_edit.png"
-image bg pasillo_1 = "Pasillo_1.png"
-image bg pasillo_2 = "Pasillo_2.png"
-image bg pasillo_3 = "Pasillo_3.png"
-image bg pasillo_3b = "Pasillo_3b.png"
+image bg pasillo_1 = "Pasillo_1_edit.png"
+image bg pasillo_2 = "Pasillo_2_edit.png"
+image bg pasillo_3 = "Pasillo_3_edit.png"
+image bg pasillo_3b = "Pasillo_3b_edit.png"
+image bg clase = "Sala_de_clase.jpg"
       
 
 # El juego comienza aquí.
@@ -38,6 +45,12 @@ label start:
 
     if Jugador == "":
         $ Jugador = "Jugador"
+    
+    $ Carrera = renpy.input("Cual es tu carrera?")
+    $ Carrera = Carrera.strip()
+
+    if Carrera == "":
+        $ Carrera = "Informatica"
 
     n "Y cuales son tus pronombres?"
 
@@ -60,11 +73,152 @@ label start:
 
 
     scene bg camino
-    "Otro día de universidad, espero hoy me vaya bien"
-    e "bla bla bla bla bla"
-    a "Dafok, ola mi pronombre es: [player_pronoun!c]"
-
-    return
+    narrator "Otro día de universidad, espero hoy me vaya bien."
+    c "¡Hola! ¿Qué tal te ha ido este fin de semana [Jugador]?"
 
 
-    return
+default menuset = set()
+
+
+menu primera_decision:
+
+    set menuset
+    "Oh, es catalina. Como deberia responderle?"
+
+    "!Oh, Cata, bastante bien! ¿Como te ha ido a ti?":
+            $ Cha = 2
+            c "A mí me ha ido muy bien, fui al cine a ver una película muy buena. ¿Vas a la universidad?"
+
+    "Oh, bastante bien":
+        $ Cha = -1
+        c "Uhmm... ¡Bueno! Es bueno oírlo. ¿Estas yendo a la universidad?"
+
+    "Decente.":
+        $ Cha = -1
+        c "Uhmm... ¡Bueno! Es bueno oírlo. ¿Estas yendo a la universidad?"
+
+label wow_pero_despues:
+
+    a "Sí, sí. ¿Los primeros días son bastante complicados no?"
+    c "Y claro. Yo aun no estoy del todo segura de si estoy en la clase correcta"
+    scene bg entrada_ula
+    c "Fiu, que cansancio. ¿Qué clase tienes ahora? A mí me toca Química Wahh..."
+    a "Tengo mates. Espero el profesor no me pregunte nada. Aún no he estudiado."
+    c "Jajaja, bueno, nos vemos luego [Jugador]."
+    scene bg clase
+    p "Buenos días alumnos, hoy estaremos haciendo el repaso final antes del parcial de mañana. Espero estén preparados."
+    "~ Un tiempo despues ~"
+    p "Bien! Alguien que quiera resolver el ejercicio?"
+    "..."
+    p "...Vale, Umh... [Jugador] Como se resuelve el problema?"
+    a "Uh? Emh..."
+
+menu segunda_decision:
+
+    set menuset
+    "Diablos, No recuerdo esto... Que deberia decir?"
+
+    "Se resuelve usando la formula a":
+            $ Int = 1
+            p "Mh... Veamos."
+            "El profesor utilizo al formula que antes mencione, resolviendo el ejercicio rapidamente."
+            p "Correcto! Felicidades [Jugador]."
+            a "¡Bien! Menos mal estudie un poco ayer."
+
+    "Se resuelve usando la formula b":
+            $ Int = -1
+            p "Mh... Veamos."
+            "El profesor utilizo al formula que antes mencione, resolviendo el ejercicio rapidamente."
+            p "Mh... Incorrecto... Estudie mas [Jugador], esto aparecera en el parcial."
+            a "Tch, tendré que estudiar mas hoy."
+
+    "Simplemente se suma":
+            $ Int = -1
+            p "Mh... Veamos."
+            "El profesor sumo el problema..."
+            p "Mh... Incorrecto... Estudie mas [Jugador], esto aparecera en el parcial."
+            a "Tch, tendré que estudiar mas hoy."
+
+    "No lo sé":
+            $ Cha = +1
+            a "Lo siento profesor, No se la respuesta."
+            p "... Entiendo, alguien mas sabe la respuesta?" 
+            a "Haa, parece que tendré que estudiar un poco más..."
+
+label wow_pero_despues_2:
+    "Despues de una larga clase... era tiempo de la ventana de 4 hora para mi proxima clase... hasta que..."
+    p "Disculpa, [Jugador] Puedes venir un segundo?"
+    a "Uy... claro..."
+    p "Veo que tus notas no son del todo buenas, aun así, te veo prestando atención en clases. ¿Hay algún problema?"
+
+menu tercera_desicion:
+
+    set menuset
+    "Que incomodo... Que deberia decirle?"
+
+    "Uhm, no... No, ningún problema profesor.":
+            p "Ya veo... Deberias ir a ver al jefe de carrera, veremos si puedes hacer una prueba recuperativa, dependera de la nota de tu siguiente parcial."
+            a "Vale... Muchas gracias profesor."
+
+    "Bueno, la verdad, no he tenido mucho tiempo para estudiar":
+            p "Ya veo... Podrías ir a ver al jefe de carrera. Podrías hablar un poco sobre el tema."
+            a "Vale... Muchas gracias profesor."
+
+    "Umh... No...":
+            p "Hmmm, Ve a ver al jefe de carrera, si sigues así tendrás que tomar recuperativas."
+            a "Vale... Muchas gracias profesor."
+label wow_pero_despues_3:
+scene bg pasillo_3b
+a "Bien! Tengo que encontrar al jefe de carrera!"
+a "Aunque... Umh..."
+menu cuarta_desicion:
+
+    set menuset
+    "Donde podria estar?"
+
+    "En la cafeteria":
+            a "Uy... No lo veo por aqui... mejor regreso a donde estaba."
+            jump cuarta_desicion
+
+    "En el pasillo":
+            a "Ahi esta! Aunque esta con alguien..."
+
+    "En el gimnasio":
+            a "Uy... No lo veo por aqui... mejor regreso a donde estaba."
+            jump cuarta_desicion
+    "En el jardin botanico":
+            a "Uy... No lo veo por aqui... mejor regreso a donde estaba."
+            jump cuarta_desicion
+label wow_pero_despues_4:
+
+menu quinta_desicion:
+
+    set menuset
+    "Le voy a hablar?"
+
+    "Hablemosle de todas formas!":
+            "Dando un suspiro, y llenandome de valor, fui hacia el jefe de carrera mientras conversaba con alguien mas."
+            a "Buenas tardes...! Usted es el jefe de carrera de [Carrera], Verdad...?"
+            j "Oh! Sip, ...Y tu eres..?"
+
+    "Que vergüenza... Mejor espero a que deje de hablar con esa persona...":
+            "Es mejor, asi no los interrumpo... Puede que esten hablando algo importante..."
+            "Aunque... El jefe de carrera se percato que lo quede viendo, y junto con la otra persona, vinieron hacia donde estaba."
+            j "Vi que te quedaste viendonos... Querias hablar con alguno de nosotros?"
+            a "A...ah! Sip, vera..."
+            
+label wow_pero_despues_5:
+a "Mi nombre es [Jugador]... El profesor Andre me dijo que venga a hablar con usted... Les molesto...?"
+t "Oh! No, no... El jefe de carrera es todo tuyo, y tambien quisiera hablarte un poco despues."
+
+
+
+
+
+
+ 
+
+return
+
+
+return
