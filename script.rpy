@@ -8,10 +8,10 @@ define n = Character("???")
 define p = Character("Andre", color="#f02626")
 define t = Character("Kevinzo", color="#51ee32")
 define j = Character("Juan II", color="#3d3b96")
-define Cha = 0
-define Int = 0
-define Intro = 0
-define Extro = 0
+define CHA = 0
+define INT = 0
+define INTRO = 0
+define EXTRO = 0
 define Carrera_jugador = Character("[Carrera]")
 image bg camino = "Camino_a_la_ula_edit.png"
 image bg entrada_ula = "Entrada_Ula_edit.png"
@@ -86,15 +86,15 @@ menu primera_decision:
     "Oh, es catalina. Como deberia responderle?"
 
     "!Oh, Cata, bastante bien! ¿Como te ha ido a ti?":
-            $ Cha = 2
+            $ CHA = CHA +2
             c "A mí me ha ido muy bien, fui al cine a ver una película muy buena. ¿Vas a la universidad?"
 
     "Oh, bastante bien":
-        $ Cha = -1
+        $ CHA = CHA-1
         c "Uhmm... ¡Bueno! Es bueno oírlo. ¿Estas yendo a la universidad?"
 
     "Decente.":
-        $ Cha = -1
+        $ CHA = CHA-2
         c "Uhmm... ¡Bueno! Es bueno oírlo. ¿Estas yendo a la universidad?"
 
 label wow_pero_despues:
@@ -119,28 +119,29 @@ menu segunda_decision:
     "Diablos, No recuerdo esto... Que deberia decir?"
 
     "Se resuelve usando la formula a":
-            $ Int = 1
+            $ INT = INT+2
             p "Mh... Veamos."
             "El profesor utilizo al formula que antes mencione, resolviendo el ejercicio rapidamente."
             p "Correcto! Felicidades [Jugador]."
             a "¡Bien! Menos mal estudie un poco ayer."
 
     "Se resuelve usando la formula b":
-            $ Int = -1
+            $ INT = INT-1
             p "Mh... Veamos."
             "El profesor utilizo al formula que antes mencione, resolviendo el ejercicio rapidamente."
             p "Mh... Incorrecto... Estudie mas [Jugador], esto aparecera en el parcial."
             a "Tch, tendré que estudiar mas hoy."
 
     "Simplemente se suma":
-            $ Int = -1
+            $ INT = INT-2
+
             p "Mh... Veamos."
             "El profesor sumo el problema..."
             p "Mh... Incorrecto... Estudie mas [Jugador], esto aparecera en el parcial."
             a "Tch, tendré que estudiar mas hoy."
 
     "No lo sé":
-            $ Cha = +1
+            $ CHA = CHA+1
             a "Lo siento profesor, No se la respuesta."
             p "... Entiendo, alguien mas sabe la respuesta?" 
             a "Haa, parece que tendré que estudiar un poco más..."
@@ -161,6 +162,7 @@ menu tercera_desicion:
             a "Vale... Muchas gracias profesor."
 
     "Bueno, la verdad, no he tenido mucho tiempo para estudiar":
+            $ CHA = CHA+1
             p "Ya veo... Podrías ir a ver al jefe de carrera. Podrías hablar un poco sobre el tema."
             a "Vale... Muchas gracias profesor."
 
@@ -191,7 +193,7 @@ menu cuarta_desicion:
             jump cuarta_desicion
 label wow_pero_despues_4:
 
-menu quinta_desicion:
+menu quINTa_desicion:
 
     set menuset
     "Le voy a hablar?"
@@ -202,7 +204,7 @@ menu quinta_desicion:
             j "Oh! Sip, ...Y tu eres..?"
 
     "Que vergüenza... Mejor espero a que deje de hablar con esa persona...":
-            "Es mejor, asi no los interrumpo... Puede que esten hablando algo importante..."
+            "Es mejor, asi no los INTerrumpo... Puede que esten hablando algo importante..."
             "Aunque... El jefe de carrera se percato que lo quede viendo, y junto con la otra persona, vinieron hacia donde estaba."
             j "Vi que te quedaste viendonos... Querias hablar con alguno de nosotros?"
             a "A...ah! Sip, vera..."
@@ -232,12 +234,13 @@ label wow_pero_despues_6:
     a "Hmmm, tenias algo que decirme?"
     t "Bueno, simplemente queria saber como les va a los de primero este año"
 
-menu quinta_desicion:
+menu quINTa_desicion:
 
     set menuset
     "Que le digo?"
 
     "Oh, si, claro... Bien... Bastante bien.":
+            $ CHA = CHA-1
             t "Hmm... Bien, si todo esta bien, entonces deberia retirarme. Ten un buen día"
     "Bueno, aguantando como puedo":
             t "Haa, eso es lo mas normal, sigue como estas y te acostumbraras algun dia. Y lo digo por experiencia.
