@@ -5,6 +5,8 @@
 define e = Character("Eileen", color="#33fff0")
 define a = Character("[Jugador]")
 define n = Character("???")
+define Cha = 0
+define Int = 0
 image bg camino = "Camino_a_la_ula_edit.png"
 image bg entrada_ula = "Entrada_Ula_edit.png"
 image bg entrada_edf = "Entrada_al_edificio_principal_edit.png"
