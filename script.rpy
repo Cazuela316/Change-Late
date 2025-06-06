@@ -60,7 +60,7 @@ label start:
 
 
     scene bg camino
-    e "Has creado un nuevo juego Ren'Py."
+    "Otro día de universidad, espero hoy me vaya bien"
     e "bla bla bla bla bla"
     a "Dafok, ola mi pronombre es: [player_pronoun!c]"
 
