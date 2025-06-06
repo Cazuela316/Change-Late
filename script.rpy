@@ -210,13 +210,40 @@ menu quinta_desicion:
 label wow_pero_despues_5:
 a "Mi nombre es [Jugador]... El profesor Andre me dijo que venga a hablar con usted... Les molesto...?"
 t "Oh! No, no... El jefe de carrera es todo tuyo, y tambien quisiera hablarte un poco despues."
+j "Bueno, sobre que tenias que hablarme?"
 
+menu cuarta_desicion:
 
+    set menuset
+    "Okay, que podria decirle?"
 
+    "O-Oh, bueno, nada en especifico":
+            j "Ok? Bueno, en ese caso quizas deberias ir a hablar con tu tutor, cuando estaba en primer año como tu era un muy buen estudiante."
+            a "Eso haré..."
 
+    "Venia sobre la posibilidad de un remedial":
+            j "Hmmm, entonces asumo que tus notas estan regular. Bueno,, esperaremos a las notas del de mañana y despues hablamos okay?"
+            a "Okay...Okay, eso haré."
 
+    "Umh... Venia acerca de mis notas":
+            j "Hmmm, entonces asumo que tus notas estan regular. Bueno,, esperaremos a las notas del de mañana y despues hablamos okay?"
+            a "Okay...Okay, eso haré."
+label wow_pero_despues_6:
+    a "Hmmm, tenias algo que decirme?"
+    t "Bueno, simplemente queria saber como les va a los de primero este año"
 
- 
+menu quinta_desicion:
+
+    set menuset
+    "Que le digo?"
+
+    "Oh, si, claro... Bien... Bastante bien.":
+            t "Hmm... Bien, si todo esta bien, entonces deberia retirarme. Ten un buen día"
+    "Bueno, aguantando como puedo":
+            t "Haa, eso es lo mas normal, sigue como estas y te acostumbraras algun dia. Y lo digo por experiencia.
+            Pero bueno, es tiempo de que me retire"
+    "Pues, de eso venia a hablarle a el jefe de carrera. Mis notas no van muy bien":
+            t "Bueno, aun quedan las remediales, si tienes alguna pregunta no dudes en enviarme un correo. Ahora, me tengo que ir, asi que suerte"
 
 return
 
