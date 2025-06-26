@@ -193,7 +193,7 @@ menu cuarta_desicion:
             jump cuarta_desicion
 label wow_pero_despues_4:
 
-menu quINTa_desicion:
+menu quinta_desicion:
 
     set menuset
     "Le voy a hablar?"
@@ -204,7 +204,7 @@ menu quINTa_desicion:
             j "Oh! Sip, ...Y tu eres..?"
 
     "Que vergüenza... Mejor espero a que deje de hablar con esa persona...":
-            "Es mejor, asi no los INTerrumpo... Puede que esten hablando algo importante..."
+            "Es mejor, asi no los interrumpo... Puede que esten hablando algo importante..."
             "Aunque... El jefe de carrera se percato que lo quede viendo, y junto con la otra persona, vinieron hacia donde estaba."
             j "Vi que te quedaste viendonos... Querias hablar con alguno de nosotros?"
             a "A...ah! Sip, vera..."
@@ -234,7 +234,7 @@ label wow_pero_despues_6:
     a "Hmmm, tenias algo que decirme?"
     t "Bueno, simplemente queria saber como les va a los de primero este año"
 
-menu quINTa_desicion:
+menu quinta_desicion:
 
     set menuset
     "Que le digo?"
