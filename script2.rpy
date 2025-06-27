@@ -44,4 +44,4 @@ label VO_DES3:
 
 label sales_comprar:
     narrator "Sales a comprar"
-    jump 
+    jump saltito
