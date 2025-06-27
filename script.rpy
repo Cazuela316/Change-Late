@@ -64,6 +64,9 @@ define act_m = 0 #Si el usuario tiene sus metas claras
 define Carrera_jugador = Character("[Carrera]")
 define Ruta_tutor = 0
 define Voley = 0
+define dormir =0
+define x = 0
+defien Flag1 = 0
 image bg camino = "Camino_a_la_ula_edit.png"
 image bg entrada_ula = "Entrada_Ula_edit.png"
 image bg entrada_edf = "Entrada_al_edificio_principal_edit.png"
@@ -148,6 +151,7 @@ menu primera_decision:
 
     "Si":
             $ Res = Res - 1
+            $ dormir = dormir + 1
             a "Bah, unas cuantas horas de sueño extra no harán mal…"
             narrator "Te dijiste a ti mismo, mientras te volvías a recostar, cerrando tus ojos…"
             narrator "De la nada, te despertaste de repente, incluso hasta un poco con miedo, pero con tus 8 horas de sueño."
@@ -516,6 +520,8 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
             a "Es muy temprano como para dormir! Tengo que aprovechar todo el tiempo que tengo!"
             narrator "Así que, empezaste a hacer todo lo posible, estudiar, repasar, Hasta ordenaste tu pieza"
             narrator "Caíste a tu cama totalmente exhausto, durmiéndote casi instantáneamente."
+            if dormir == 1:
+
             
 label wow_pero_despues_de_la_hiper_decision: 
 
@@ -534,28 +540,47 @@ label wow_pero_despues_de_la_hiper_decision:
             a "¡Ah! Hola cata ¿Como estuviste ayer? al final no te perdiste ¿O si?"
             c "¡No, no me perdi!, y creo que me fue bastante bien ayer, además de que entendí todo"
             a "Ah… eso es bueno, me alegro por ti"
+            $  Cha = Cha - 1
+            jump DIA2_DES2_C
         "Saludas a ambos":
             a "¡Hola cata! Y hola a ti también"
             c "¡Hola [Jugador]! ¿Como te fue ayer?"
             a "Bastante bien, la verdad hable con el jefe de carrera y el tutor ¿Y a ti como te fue?"
             c "A mi me fue bastante bien, además de que entendí casi todo lo que vi ayer"
             n "Hola amigo ¿Cual es tu nombre? Para saber como llamarte"
+            $  Cha = Cha + 1
+label nombre:
+    menu HOLAA:
+        set menuset
+        narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
+
+        "Le digo mi nombre":
+            a "Ah, soy [Jugador], un gusto"
+            $ Cha = Cha + 1
+            $ Flag1 = Flag1 +1
+        "No le digo mi nombre":
+            a "Que te importa"
+            $ Cha = Cha -1
+            jump DIA2_DES2_C
 label DIA2_DES1:
-    narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
-    a "Oh perdón, no me presente, soy [Jugador] ¿El tuyo?"
     menu DIA2_DEC2:
         
+        narrator narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
         set menuset
         n "Yo me llamo Felipe, te ves super buena onda!, asi de pasada ah sido un gusto conocerte"
-
-        "Te extiende la mano, y no estas seguro si tomarla o no, o como responderle":
+        "Le dices que ah sido un gusto conocerlo también y le das la mano":
             f "Y que planes tienen para hoy?"
             Voley = Voley + 1
+            $ Cha = Cha + 1
             jump DIA2_DES2
-        "Le dices que ah sido un gusto conocerlo también y le das la mano":
         "Le dices que ok de manera insegura y no le das la mano":
+            $ Cha = Cha - 1
         "Le dices que es un gusto pero no le das la mano":
+            $ Cha = Cha + 1
+
 label DIA2_DES2_C:
+    if Flag1 == 1:
+        jump DIA2_DES2
     narrator "Esto lleva a que Cata haga una pregunta"
     c "Y que planes tienen para hoy?"
 label DIA2_DES2:
@@ -587,14 +612,20 @@ label DIA2_DES3:
 
         "Decides ir y preguntarle a algunos de tus compañeros si quieren hacer grupo contigo":
             a "Hola! Quería saber si puedo hacer grupo con ustedes, si no es molestia"
-            un pibe?? "Si, puedes ser con nosotros"
+            n "Si, puedes ser con nosotros"
+            $ Cha = Cha + 2
+            $ Extro = Extro + 1
             jump DIA2_DES4
         "Esperas a ver si alguno de tus compañeros te pregunta":
             narrator "Se te acerca un compañero"
             n "Oye, vi que estas solo, te falta grupo? De ser asi puedes ser con nosotros"
             a "Oh gracias, de echo si me faltaba un grupo para trabajar"
+            $ Cha = Cha - 1
+            $ Intro = Intro + 1
             jump DIA2_DES4
         "Decides hacer el trabajo solo":
+            $ Cha = Cha - 2
+            $ Intro = Intro + 2
 label DIA2_PROF:
     
     menu DIA2_DEC5_PROF:
@@ -626,7 +657,9 @@ label DIA2_DES4:
         "Piensas un poco en tu día antes de responderle"
 
         "Gracias por preguntar! Eh estado bien hoy":
+            $ Cha = Cha + 1
         "La verdad es que eh estado normal desde ayer":
+            $ Cha = Cha - 1
     if Ruta_tutor != 1:
         j "Es bueno que no estes mal, y como te fue con el tutor ayer?"
     else:
