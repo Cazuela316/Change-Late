@@ -1,5 +1,6 @@
 label voley
     narrator "Al salir de la clase te encuentras con Felipe"
+    scene bg camino
     menu voley_1:
         set menuset
         n "Oye! [Jugador]!, te gustaría venir conmigo al taller de vóley?"
@@ -12,6 +13,7 @@ label voley
             n "Va! Vamos"
 label VO_DES1
     narrator "Ambos caminan hasta el gimnasio y Felipe te pregunta"
+    scene bg gym
     menu voley_2:
         set menuset
         n "Oye, te caigo bien?"

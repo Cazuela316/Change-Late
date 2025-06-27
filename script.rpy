@@ -523,7 +523,7 @@ label wow_pero_despues_de_la_hiper_decision:
     a "Que buena hora para despertar e ir a la universidad"
     narrator "Te levantas y te arreglas para salir de a la U, en el camino hacia esta, ves a lo lejos a tu amiga, y al mirar mejor pareciera que esta con alguien que no conoces."
     narrator "Te acercas y no estas seguro si saludar solo a tu amiga o ambos."
-
+    scene bg camino
     menu DIA2_DEC1:
 
         set menuset
@@ -571,9 +571,11 @@ label DIA2_DES2
             c "No deberías sobresaturarte mucho estudiando, te puede hacer mal"
 label DIA2_DES3
     narrator "Durante la conversación llegan los tres a la universidad y se separan llendo cada uno a sus clases"
+    scene bg entrada_ula
     a "Bueno, nos vemos más tarde!, o quizás en un rato más, quien sabe"
     c "Si, nos vamos rápido porque ya vamos algo tarde"
     n "Eso!, adiós!"
+    scene bg clase
     narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte, cuando lo encuentras te sientas y esperar que llegue el profesor"
     narrator "El profesor llega a la clase dando un anuncio"
     p "Bueno chicos y chicas, lo que sigue ahora es nuestro proyecto semestral grupal, asi que espero que puedan hacer todos grupos"
@@ -605,10 +607,12 @@ label DIA2_PROF
         "Le dices que quisiste hacerlo solo":
             a "Si profesor, me gusta más trabajar individualmente"
             p "Esta bien"
+    scene bg pasillo
 label saltito
     if Voley == 1:
         jump voley
 label DIA2_DES4
+    scene bg camino
     if Ruta_tutor != 1:
         narrator "Asi la clase concluye, y decides irte a tu casa, en el camino a esta te encuentras con el jefe de carrera"
         j "Hola [Jugador], como has estado desde ayer?"
@@ -640,7 +644,7 @@ label DIA2_DES5
     else:
         j "A todo esto, sabes cuales son tus metas?"
     menu DIA2_DEC7:
-
+    scene bg camino
         set menuset
         "Que le digo?"
 
