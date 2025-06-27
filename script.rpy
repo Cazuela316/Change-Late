@@ -521,7 +521,7 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
             narrator "Así que, empezaste a hacer todo lo posible, estudiar, repasar, Hasta ordenaste tu pieza"
             narrator "Caíste a tu cama totalmente exhausto, durmiéndote casi instantáneamente."
             if dormir == 1:
-                jump fin
+                jump fin2
             else:
                 jump sales_comprar
 
@@ -709,7 +709,7 @@ label DIA2_DES5:
                 j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
 label fin:
     #ACA NO SE COMO ES CUANDO SE ACABA
-        
+label fin2:
 return
 
 
