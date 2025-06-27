@@ -66,7 +66,7 @@ define Ruta_tutor = 0
 define Voley = 0
 define dormir =0
 define x = 0
-defien Flag1 = 0
+define Flag1 = 0
 image bg camino = "Camino_a_la_ula_edit.png"
 image bg entrada_ula = "Entrada_Ula_edit.png"
 image bg entrada_edf = "Entrada_al_edificio_principal_edit.png"
@@ -567,8 +567,6 @@ label nombre:
             jump DIA2_DES2_C
 label DIA2_DES1:
     menu DIA2_DEC2:
-        
-        narrator narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
         set menuset
         n "Yo me llamo Felipe, te ves super buena onda!, asi de pasada ah sido un gusto conocerte"
         "Le dices que ah sido un gusto conocerlo también y le das la mano":
@@ -681,8 +679,8 @@ label DIA2_DES5:
         f "A todo esto, sabes cuales son tus metas?"
     else:
         j "A todo esto, sabes cuales son tus metas?"
-    menu DIA2_DEC7:
     scene bg camino
+    menu DIA2_DEC7:
         set menuset
         "Que le digo?"
 

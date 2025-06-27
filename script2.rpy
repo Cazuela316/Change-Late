@@ -8,7 +8,7 @@ label voley:
 
         "No gracias, no estoy muy interesado en los deportes la verdad":
             f "Esta bien! Entonces nos vemos luego"
-            Voley = Voley - 1
+            $ Voley = Voley - 1
             jump saltito
         "Bueno, te acompaño, así conozco más!":
             f "Va! Vamos"
