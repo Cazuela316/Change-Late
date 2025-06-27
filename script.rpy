@@ -8,7 +8,7 @@ define n = Character("???")
 define p = Character("Profe Andre", color="#b1ea35")
 define t = Character("Kevinzo", color="#51ee32")
 define j = Character("Juan II", color="#3d3b96")
-define f = Character("Felipe")
+define f = Character("Felipe", color="#ffffff")
 image catalina feliz = "CATA_FELIZ.png"
 image catalina triste = "CATA_TRISTE.png"
 image catalina neutral = "CATA_NORMAL.png"
@@ -710,6 +710,15 @@ label DIA2_DES5:
 label fin:
     #ACA NO SE COMO ES CUANDO SE ACABA
 label fin2:
+    narrator "De la nada, te despertaste, el sol choco tu vista."
+    a "…Tengo un mal presentimiento."
+    narrator "Rápidamente fuiste por tu celular, prendiéndolo y revisando la hora."
+    a "..."
+    a "¿¡LAS 3 DE LA TARDE!?"
+    a "Maldita sea… Me quede dormido de nuevo!"
+    narrator "Soltaste un muy largo suspiro."
+    a "Tsh… Supongo que podría ir a comprar cosas cocinar algo…"
+    a "Aghhh!!! Porque tuve que quedarme dormido denuevo...!!!"
 return
 
 
