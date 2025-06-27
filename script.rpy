@@ -1,4 +1,4 @@
-﻿﻿# Coloca el código de tu juego en este archivo.
+﻿# Coloca el código de tu juego en este archivo.
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
@@ -713,17 +713,7 @@ label DIA2_DES5:
 label fin:
     scene bg "#000000"
     centered "Hola"
-label fin2:
 
-    narrator "De la nada, te despertaste, el sol choco tu vista."
-    a "…Tengo un mal presentimiento."
-    narrator "Rápidamente fuiste por tu celular, prendiéndolo y revisando la hora."
-    a "..."
-    a "¿¡LAS 3 DE LA TARDE!?"
-    a "Maldita sea… Me quede dormido de nuevo!"
-    narrator "Soltaste un muy largo suspiro."
-    a "Tsh… Supongo que podría ir a comprar cosas cocinar algo…"
-    a "Aghhh!!! Porque tuve que quedarme dormido denuevo...!!!"
 return
 
 
