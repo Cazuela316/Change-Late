@@ -41,3 +41,7 @@ label VO_DES3:
     f "Bien. Adios entonces [jugador]"
     a "Adios."
     jump DIA2_DES5
+
+label sales_comprar:
+    narrator "Sales a comprar"
+    jump 

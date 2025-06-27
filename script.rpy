@@ -521,6 +521,9 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
             narrator "Así que, empezaste a hacer todo lo posible, estudiar, repasar, Hasta ordenaste tu pieza"
             narrator "Caíste a tu cama totalmente exhausto, durmiéndote casi instantáneamente."
             if dormir == 1:
+                jump fin
+            else:
+                jump sales_comprar
 
             
 label wow_pero_despues_de_la_hiper_decision: 
@@ -639,6 +642,7 @@ label DIA2_PROF:
         "Le dices que quisiste hacerlo solo":
             a "Si profesor, me gusta más trabajar individualmente"
             p "Esta bien"
+    narrator "La clase termina"
     scene bg pasillo
 label saltito:
     if Voley == 1:
@@ -646,17 +650,17 @@ label saltito:
 label DIA2_DES4:
     scene bg camino
     if Ruta_tutor != 1:
-        narrator "Asi la clase concluye, y decides irte a tu casa, en el camino a esta te encuentras con el jefe de carrera"
+        narrator "Decides irte a tu casa, en el camino a esta te encuentras con el jefe de carrera"
         j "Hola [Jugador], como has estado desde ayer?"
     else:
-        narrator "Asi la clase concluye, y decides irte a tu casa, en el camino a esta te encuentras con el tutor"
+        narrator "Decides irte a tu casa, en el camino a esta te encuentras con el tutor"
         t "Hola [Jugador], como has estado desde ayer?"
     menu DIA2_DEC6:
 
         set menuset
         "Piensas un poco en tu día antes de responderle"
 
-        "Gracias por preguntar! Eh estado bien hoy":
+        "Gracias por preguntar! He estado bien hoy":
             $ Cha = Cha + 1
         "La verdad es que eh estado normal desde ayer":
             $ Cha = Cha - 1
