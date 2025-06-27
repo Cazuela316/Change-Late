@@ -571,7 +571,7 @@ label DIA2_DES1:
         n "Yo me llamo Felipe, te ves super buena onda!, asi de pasada ah sido un gusto conocerte"
         "Le dices que ah sido un gusto conocerlo también y le das la mano":
             f "Y que planes tienen para hoy?"
-            Voley = Voley + 1
+            $ Voley = Voley + 1
             $ Cha = Cha + 1
             jump DIA2_DES2
         "Le dices que ok de manera insegura y no le das la mano":
