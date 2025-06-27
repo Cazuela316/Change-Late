@@ -1,4 +1,4 @@
-﻿# Coloca el código de tu juego en este archivo.
+﻿﻿# Coloca el código de tu juego en este archivo.
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
@@ -29,6 +29,7 @@ image profe feliz = "PROFE_FELIZ.png"
 image profe triste = "PROFE_TRISTE.png"
 image profe neutral = "PROFE_NORMAL.png"
 image profe incomodo = "PROFE_INC.png"
+image bg negro = "#000000"
 transform mitad_derecha:
     zoom 0.5
     xalign 1.0
@@ -711,8 +712,8 @@ label DIA2_DES5:
             else:
                 j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
 label fin:
-    scene color "#000000"
-    centered "¡Hola!¡Estoy aqui para mostrarte tus resultados! Estas son las estadisticas con las que acabaste:\nCarisma:[Cha]\nInteligencia:[Int]\nIntrovertidismo:[Intro]\nExtrovertidismo:[Extro]\nResponsabilidad:[Res]"
+    scene bg negro
+    centered "{color=#ffffff}¡Hola!¡Estoy aqui para mostrarte tus resultados! Estas son las estadisticas con las que acabaste:\nCarisma:[Cha]\nInteligencia:[Int]\nIntrovertidismo:[Intro]\nExtrovertidismo:[Extro]\nResponsabilidad:[Res].{/color}"
 
 return
 
