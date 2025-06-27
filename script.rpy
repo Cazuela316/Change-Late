@@ -61,6 +61,8 @@ define Res = 0
 define act_l = 0 #Si el usuario es de otra parte o no
 define act_m = 0 #Si el usuario tiene sus metas claras
 define Carrera_jugador = Character("[Carrera]")
+define Ruta_tutor = 0
+define Voley = 0
 image bg camino = "Camino_a_la_ula_edit.png"
 image bg entrada_ula = "Entrada_Ula_edit.png"
 image bg entrada_edf = "Entrada_al_edificio_principal_edit.png"
@@ -276,6 +278,7 @@ menu tercera_desicion:
     "Uhm, no, no hay ningún problema, profesor.":
         $ Cha = Cha - 1
         if Cha >= 2:
+            Ruta_tutor = Ruta_tutor+1
             jump ruta_extra_1  # ← Esto te lleva a la ruta secreta
         else:
                 p "Ya veo... Deberías ir a ver al jefe de carrera, veremos si puedes hacer una prueba recuperativa. Dependerá de la nota de tu siguiente parcial."
@@ -325,7 +328,8 @@ label wow_pero_despues_3:
             a "Uy... No lo veo por aqui... mejor regreso a donde estaba."
             jump cuarta_desicion
 label wow_pero_despues_4:
-    menu quinta_desicion:
+
+menu quinta_desicion:
 
         set menuset
         "Le voy a hablar?"
@@ -514,11 +518,156 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
             
 label wow_pero_despues_de_la_hiper_decision: 
 
+    a "Waah, otro día más de universidad, me pregunto que hora será"
+    narrator "Te estiras para agarrar tu celular y ver la hora, el cual muestra las 7:30 de la mañana"
+    a "Que buena hora para despertar e ir a la universidad"
+    narrator "Te levantas y te arreglas para salir de a la U, en el camino hacia esta, ves a lo lejos a tu amiga, y al mirar mejor pareciera que esta con alguien que no conoces."
+    narrator "Te acercas y no estas seguro si saludar solo a tu amiga o ambos."
 
+    menu DIA2_DEC1:
 
+        set menuset
+        "¿A quien saludo?"
 
- 
+        "Saludas solo a tu amiga":
+            a "¡Ah! Hola cata ¿Como estuviste ayer? al final no te perdiste ¿O si?"
+            c "¡No, no me perdi!, y creo que me fue bastante bien ayer, además de que entendí todo"
+            a "Ah… eso es bueno, me alegro por ti"
+        "Saludas a ambos":
+            a "¡Hola cata! Y hola a ti también"
+            c "¡Hola [Jugador]! ¿Como te fue ayer?"
+            a "Bastante bien, la verdad hable con el jefe de carrera y el tutor ¿Y a ti como te fue?"
+            c "A mi me fue bastante bien, además de que entendí casi todo lo que vi ayer"
+            n "Hola amigo ¿Cual es tu nombre? Para saber como llamarte"
+label DIA2_DES1
+    narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
+    a "Oh perdón, no me presente, soy [Jugador] ¿El tuyo?"
+    menu DIA2_DEC2:
+        
+        set menuset
+        n "Yo me llamo Felipe, te ves super buena onda!, asi de pasada ah sido un gusto conocerte"
 
+        "Te extiende la mano, y no estas seguro si tomarla o no, o como responderle":
+            n "Y que planes tienen para hoy?"
+            Voley = Voley + 1
+            jump DIA2_DES2
+        "Le dices que ah sido un gusto conocerlo también y le das la mano":
+        "Le dices que ok de manera insegura y no le das la mano":
+        "Le dices que es un gusto pero no le das la mano":
+label DIA2_DES2_C
+    narrator "Esto lleva a que Cata haga una pregunta"
+    c "Y que planes tienen para hoy?"
+label DIA2_DES2
+    menu DIA2_DEC3:
+
+        set menuset
+        "En respuesta a la pregunta de que planes hay"
+
+        "La verdad es que no tengo nada en mente de momento":
+            c "Oh, eso es normal, con todas las vueltas en la U en estos pocos días"
+        "La verdad es que planeo estudiar un poco más rato":
+            c "Suena buena idea, siempre es bueno repasar y estudiar un poco para estar seguros en cualquier situación"
+        "La verdad es que planeo estudiar toda la tarde llegando a mi casa":
+            c "No deberías sobresaturarte mucho estudiando, te puede hacer mal"
+label DIA2_DES3
+    narrator "Durante la conversación llegan los tres a la universidad y se separan llendo cada uno a sus clases"
+    a "Bueno, nos vemos más tarde!, o quizás en un rato más, quien sabe"
+    c "Si, nos vamos rápido porque ya vamos algo tarde"
+    n "Eso!, adiós!"
+    narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte, cuando lo encuentras te sientas y esperar que llegue el profesor"
+    narrator "El profesor llega a la clase dando un anuncio"
+    p "Bueno chicos y chicas, lo que sigue ahora es nuestro proyecto semestral grupal, asi que espero que puedan hacer todos grupos"
+    menu DIA2_DEC4:
+        
+        set menuset
+        "Que haces?"
+
+        "Decides ir y preguntarle a algunos de tus compañeros si quieren hacer grupo contigo":
+            a "Hola! Quería saber si puedo hacer grupo con ustedes, si no es molestia"
+            un pibe?? "Si, puedes ser con nosotros"
+            jump DIA2_DES4
+        "Esperas a ver si alguno de tus compañeros te pregunta":
+            narrator "Se te acerca un compañero"
+            compa "Oye, vi que estas solo, te falta grupo? De ser asi puedes ser con nosotros"
+            a "Oh gracias, de echo si me faltaba un grupo para trabajar"
+            jump DIA2_DES4
+        "Decides hacer el trabajo solo":
+label DIA2_PROF
+    
+    menu DIA2_DEC5_PROF:
+
+        set menuset
+        p "Veo que sigue sin equipo, planea hacer el trabajo sin compañeros?"
+
+        "Le dices que no encontraste grupo":
+            a "Si profesor, es que no logre encontrar un grupo que le faltara persona"
+            p "Esta bien"
+        "Le dices que quisiste hacerlo solo":
+            a "Si profesor, me gusta más trabajar individualmente"
+            p "Esta bien"
+label saltito
+    if Voley == 1:
+        jump voley
+label DIA2_DES4
+    if Ruta_tutor != 1:
+        narrator "Asi la clase concluye, y decides irte a tu casa, en el camino a esta te encuentras con el jefe de carrera"
+        j "Hola [Jugador], como has estado desde ayer?"
+    else:
+        narrator "Asi la clase concluye, y decides irte a tu casa, en el camino a esta te encuentras con el tutor"
+        t "Hola [Jugador], como has estado desde ayer?"
+    menu DIA2_DEC6:
+
+        set menuset
+        "Piensas un poco en tu día antes de responderle"
+
+        "Gracias por preguntar! Eh estado bien hoy":
+        "La verdad es que eh estado normal desde ayer":
+    if Ruta_tutor != 1:
+        j "Es bueno que no estes mal, y como te fue con el tutor ayer?"
+    else:
+        t "Es bueno que no estes mal, y como te fue con el jefe de carrera ayer?"
+    a "Ayer, hable con el, pero me dijo que me hablaría para organizar bien las fechas, asi que no eh sabido nada"
+    if Ruta_tutor != 1:
+        j "Las remediales aveces son dificiles, asi que te recomiendo prepararte desde ya estudiando de apoco"
+    else:
+        t "Las remediales aveces son dificiles, asi que te recomiendo prepararte desde ya estudiando de apoco"
+    a "Gracias por el consejo, lo tomare en cuenta"
+label DIA2_DES5
+    if Ruta_tutor == 1:
+        j "A todo esto, sabes cuales son tus metas?"
+    elif Voley == 1:
+        n "A todo esto, sabes cuales son tus metas?"
+    else:
+        j "A todo esto, sabes cuales son tus metas?"
+    menu DIA2_DEC7:
+
+        set menuset
+        "Que le digo?"
+
+        "La verdad es que me meti a la carrera porque eh escuchado que pagan bien":
+            if Ruta_tutor == 1:
+                j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
+            elif Voley == 1:
+                n "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
+            else:
+                j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
+        "Si, tengo muy claras mis metas para ahora y el futuro":
+            if Ruta_tutor == 1:
+                j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
+            elif Voley == 1:
+                n "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
+            else:
+                j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
+        "La verdad es que no tengo tanta seguridad de mis metas, me meti a la carrera porque es la que más me llamo la atención":
+            if Ruta_tutor == 1:
+                j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
+            elif Voley == 1:
+                n "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
+            else:
+                j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
+label fin
+    #ACA NO SE COMO ES CUANDO SE ACABA
+        
 return
 
 
