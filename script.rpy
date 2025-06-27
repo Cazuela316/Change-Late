@@ -708,7 +708,8 @@ label DIA2_DES5:
             else:
                 j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
 label fin:
-    #ACA NO SE COMO ES CUANDO SE ACABA
+    scene bg "#000000"
+    mitad_centro "Hola"
 label fin2:
     narrator "De la nada, te despertaste, el sol choco tu vista."
     a "…Tengo un mal presentimiento."
