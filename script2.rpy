@@ -1,3 +1,4 @@
+
 label voley:
     narrator "Al salir de la clase te encuentras con Felipe"
     scene bg camino
