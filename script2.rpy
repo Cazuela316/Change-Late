@@ -20,7 +20,9 @@ label VO_DES1:
         f "Oye, te caigo bien?"
 
         "Si de echo me caes bastante bien":
+            $ Cha = Cha + 1
         "Super si, eres muy cool":
+            $ Cha = Cha + 1
 label VO_DES2:
     narrator "En esa pregunta llegan al gimnasio y Felipe hace la pregunta de las metas"
     narrator "Despues de estar jugando un rato"
@@ -29,9 +31,11 @@ label VO_DES2:
         f "Oye, para ser un novato eres bastante bueno. ¿Has jugado antes? Por ejemplo... Hmmm ¿Sabes que hace un libero?"
 
         "Es un jugador que se especializa en atacar":
-            f "Hmmm, no, los liberos se encargan de la defense por lo general.":
+            f "Hmmm, no, los liberos se encargan de la defensa por lo general.":
+            $ Int = Int - 1
         "Es un jugador que se especializa en defender":
             f "Oh, muy bien. Los liberos siempre son los encargados de la defensa."
+            $ Int = Int + 1
 label VO_DES3:
     f "Bueno, se esta haciendo tarde, creo que me voy ya"
     a "Hmm, bueno, entonces creo que tambien me ire antes de que se oscurezca mucho mas"
