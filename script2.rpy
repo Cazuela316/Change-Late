@@ -1,4 +1,4 @@
-label voley
+label voley:
     narrator "Al salir de la clase te encuentras con Felipe"
     scene bg camino
     menu voley_1:
@@ -11,7 +11,7 @@ label voley
             jump saltito
         "Bueno, te acompaño, así conozco más!":
             n "Va! Vamos"
-label VO_DES1
+label VO_DES1:
     narrator "Ambos caminan hasta el gimnasio y Felipe te pregunta"
     scene bg gym
     menu voley_2:
@@ -20,7 +20,7 @@ label VO_DES1
 
         "Si de echo me caes bastante bien":
         "Super si, eres muy cool":
-label VO_DES2
+label VO_DES2:
     narrator "En esa pregunta llegan al gimnasio y Felipe hace la pregunta de las metas"
     narrator "Despues de estar jugando un rato"
     menu voley_3:
@@ -31,7 +31,7 @@ label VO_DES2
             n "Hmmm, no, los liberos se encargan de la defense por lo general.":
         "Es un jugador que se especializa en defender":
             n "Oh, muy bien. Los liberos siempre son los encargados de la defensa."
-label VO_DES3
+label VO_DES3:
     n "Bueno, se esta haciendo tarde, creo que me voy ya"
     a "Hmm, bueno, entonces creo que tambien me ire antes de que se oscurezca mucho mas"
     n "Bien. Adios entonces [jugador]"
