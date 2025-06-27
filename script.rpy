@@ -711,8 +711,8 @@ label DIA2_DES5:
             else:
                 j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
 label fin:
-    scene bg "#000000"
-    centered "Hola"
+    scene color "#000000"
+    centered "¡Hola!¡Estoy aqui para mostrarte tus resultados! Estas son las estadisticas con las que acabaste:\nCarisma:[Cha]\nInteligencia:[Int]\nIntrovertidismo:[Intro]\nExtrovertidismo:[Extro]\nResponsabilidad:[Res]"
 
 return
 
