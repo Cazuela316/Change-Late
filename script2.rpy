@@ -31,7 +31,7 @@ label VO_DES2:
         f "Oye, para ser un novato eres bastante bueno. ¿Has jugado antes? Por ejemplo... Hmmm ¿Sabes que hace un libero?"
 
         "Es un jugador que se especializa en atacar":
-            f "Hmmm, no, los liberos se encargan de la defensa por lo general.":
+            f "Hmmm, no, los liberos se encargan de la defensa por lo general."
             $ Int = Int - 1
         "Es un jugador que se especializa en defender":
             f "Oh, muy bien. Los liberos siempre son los encargados de la defensa."
