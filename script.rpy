@@ -2,12 +2,13 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
-define c = Character("Catalina", color="#d72bee")
+define c = Character("Catamaran", color="#d72bee")
 define a = Character("[Jugador]")
 define n = Character("???")
 define p = Character("Profe Andre", color="#b1ea35")
 define t = Character("Kevinzo", color="#51ee32")
 define j = Character("Juan II", color="#3d3b96")
+define f = Character("Felipe")
 image catalina feliz = "CATA_FELIZ.png"
 image catalina triste = "CATA_TRISTE.png"
 image catalina neutral = "CATA_NORMAL.png"
@@ -278,7 +279,7 @@ menu tercera_desicion:
     "Uhm, no, no hay ningún problema, profesor.":
         $ Cha = Cha - 1
         if Cha >= 2:
-            Ruta_tutor = Ruta_tutor+1
+            $ Ruta_tutor = Ruta_tutor + 1
             jump ruta_extra_1  # ← Esto te lleva a la ruta secreta
         else:
                 p "Ya veo... Deberías ir a ver al jefe de carrera, veremos si puedes hacer una prueba recuperativa. Dependerá de la nota de tu siguiente parcial."
@@ -539,7 +540,7 @@ label wow_pero_despues_de_la_hiper_decision:
             a "Bastante bien, la verdad hable con el jefe de carrera y el tutor ¿Y a ti como te fue?"
             c "A mi me fue bastante bien, además de que entendí casi todo lo que vi ayer"
             n "Hola amigo ¿Cual es tu nombre? Para saber como llamarte"
-label DIA2_DES1
+label DIA2_DES1:
     narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
     a "Oh perdón, no me presente, soy [Jugador] ¿El tuyo?"
     menu DIA2_DEC2:
@@ -548,16 +549,16 @@ label DIA2_DES1
         n "Yo me llamo Felipe, te ves super buena onda!, asi de pasada ah sido un gusto conocerte"
 
         "Te extiende la mano, y no estas seguro si tomarla o no, o como responderle":
-            n "Y que planes tienen para hoy?"
+            f "Y que planes tienen para hoy?"
             Voley = Voley + 1
             jump DIA2_DES2
         "Le dices que ah sido un gusto conocerlo también y le das la mano":
         "Le dices que ok de manera insegura y no le das la mano":
         "Le dices que es un gusto pero no le das la mano":
-label DIA2_DES2_C
+label DIA2_DES2_C:
     narrator "Esto lleva a que Cata haga una pregunta"
     c "Y que planes tienen para hoy?"
-label DIA2_DES2
+label DIA2_DES2:
     menu DIA2_DEC3:
 
         set menuset
@@ -569,12 +570,12 @@ label DIA2_DES2
             c "Suena buena idea, siempre es bueno repasar y estudiar un poco para estar seguros en cualquier situación"
         "La verdad es que planeo estudiar toda la tarde llegando a mi casa":
             c "No deberías sobresaturarte mucho estudiando, te puede hacer mal"
-label DIA2_DES3
+label DIA2_DES3:
     narrator "Durante la conversación llegan los tres a la universidad y se separan llendo cada uno a sus clases"
     scene bg entrada_ula
     a "Bueno, nos vemos más tarde!, o quizás en un rato más, quien sabe"
     c "Si, nos vamos rápido porque ya vamos algo tarde"
-    n "Eso!, adiós!"
+    f "Eso!, adiós!"
     scene bg clase
     narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte, cuando lo encuentras te sientas y esperar que llegue el profesor"
     narrator "El profesor llega a la clase dando un anuncio"
@@ -590,11 +591,11 @@ label DIA2_DES3
             jump DIA2_DES4
         "Esperas a ver si alguno de tus compañeros te pregunta":
             narrator "Se te acerca un compañero"
-            compa "Oye, vi que estas solo, te falta grupo? De ser asi puedes ser con nosotros"
+            n "Oye, vi que estas solo, te falta grupo? De ser asi puedes ser con nosotros"
             a "Oh gracias, de echo si me faltaba un grupo para trabajar"
             jump DIA2_DES4
         "Decides hacer el trabajo solo":
-label DIA2_PROF
+label DIA2_PROF:
     
     menu DIA2_DEC5_PROF:
 
@@ -608,10 +609,10 @@ label DIA2_PROF
             a "Si profesor, me gusta más trabajar individualmente"
             p "Esta bien"
     scene bg pasillo
-label saltito
+label saltito:
     if Voley == 1:
         jump voley
-label DIA2_DES4
+label DIA2_DES4:
     scene bg camino
     if Ruta_tutor != 1:
         narrator "Asi la clase concluye, y decides irte a tu casa, en el camino a esta te encuentras con el jefe de carrera"
@@ -636,11 +637,11 @@ label DIA2_DES4
     else:
         t "Las remediales aveces son dificiles, asi que te recomiendo prepararte desde ya estudiando de apoco"
     a "Gracias por el consejo, lo tomare en cuenta"
-label DIA2_DES5
+label DIA2_DES5:
     if Ruta_tutor == 1:
         j "A todo esto, sabes cuales son tus metas?"
     elif Voley == 1:
-        n "A todo esto, sabes cuales son tus metas?"
+        f "A todo esto, sabes cuales son tus metas?"
     else:
         j "A todo esto, sabes cuales son tus metas?"
     menu DIA2_DEC7:
@@ -652,14 +653,14 @@ label DIA2_DES5
             if Ruta_tutor == 1:
                 j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
             elif Voley == 1:
-                n "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
+                f "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
             else:
                 j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
         "Si, tengo muy claras mis metas para ahora y el futuro":
             if Ruta_tutor == 1:
                 j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
             elif Voley == 1:
-                n "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
+                f "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
             else:
                 j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
         "La verdad es que no tengo tanta seguridad de mis metas, me meti a la carrera porque es la que más me llamo la atención":
@@ -669,7 +670,7 @@ label DIA2_DES5
                 n "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
             else:
                 j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer"
-label fin
+label fin:
     #ACA NO SE COMO ES CUANDO SE ACABA
         
 return
