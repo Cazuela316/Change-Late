@@ -549,7 +549,7 @@ label DIA2_DES1:
         n "Yo me llamo Felipe, te ves super buena onda!, asi de pasada ah sido un gusto conocerte"
 
         "Te extiende la mano, y no estas seguro si tomarla o no, o como responderle":
-            n "Y que planes tienen para hoy?"
+            f "Y que planes tienen para hoy?"
             Voley = Voley + 1
             jump DIA2_DES2
         "Le dices que ah sido un gusto conocerlo también y le das la mano":
@@ -575,7 +575,7 @@ label DIA2_DES3:
     scene bg entrada_ula
     a "Bueno, nos vemos más tarde!, o quizás en un rato más, quien sabe"
     c "Si, nos vamos rápido porque ya vamos algo tarde"
-    n "Eso!, adiós!"
+    f "Eso!, adiós!"
     scene bg clase
     narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte, cuando lo encuentras te sientas y esperar que llegue el profesor"
     narrator "El profesor llega a la clase dando un anuncio"
@@ -591,7 +591,7 @@ label DIA2_DES3:
             jump DIA2_DES4
         "Esperas a ver si alguno de tus compañeros te pregunta":
             narrator "Se te acerca un compañero"
-            compa "Oye, vi que estas solo, te falta grupo? De ser asi puedes ser con nosotros"
+            n "Oye, vi que estas solo, te falta grupo? De ser asi puedes ser con nosotros"
             a "Oh gracias, de echo si me faltaba un grupo para trabajar"
             jump DIA2_DES4
         "Decides hacer el trabajo solo":
@@ -641,7 +641,7 @@ label DIA2_DES5:
     if Ruta_tutor == 1:
         j "A todo esto, sabes cuales son tus metas?"
     elif Voley == 1:
-        n "A todo esto, sabes cuales son tus metas?"
+        f "A todo esto, sabes cuales son tus metas?"
     else:
         j "A todo esto, sabes cuales son tus metas?"
     menu DIA2_DEC7:
@@ -653,14 +653,14 @@ label DIA2_DES5:
             if Ruta_tutor == 1:
                 j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
             elif Voley == 1:
-                n "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
+                f "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
             else:
                 j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
         "Si, tengo muy claras mis metas para ahora y el futuro":
             if Ruta_tutor == 1:
                 j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
             elif Voley == 1:
-                n "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
+                f "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
             else:
                 j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
         "La verdad es que no tengo tanta seguridad de mis metas, me meti a la carrera porque es la que más me llamo la atención":
