@@ -133,7 +133,7 @@ label start:
 
 
     a "Waah… Fuh… Todavía tengo sueño…"
-    narrator "Con algo de dificultad y aun no teniendo todos tus sentidos despiertos, extendiste tu mano para alcanzar tu celular."
+    narrator "Con algo de dificultad y aun sin todos tus sentidos despiertos, extendiste tu mano para alcanzar tu celular."
     a "¿Qué horas son?"
     narrator "Te dijiste a ti mismo mientras lo prendías, aturdiéndote un poco el brillo de la pantalla."
     a "Erm..."
@@ -156,7 +156,7 @@ menu primera_decision:
             $ dormir = dormir + 1
             a "Bah, unas cuantas horas de sueño extra no harán mal…"
             narrator "Te dijiste a ti mismo, mientras te volvías a recostar, cerrando tus ojos…"
-            narrator "De la nada, te despertaste de repente, incluso hasta un poco con miedo, pero con tus 8 horas de sueño."
+            narrator "De la nada, te despertaste, incluso hasta un poco con miedo, pero con tus 8 horas de sueño."
             a "Wahhh! Que buena dormida. Uy, ¿Qué hora es?"
             a "..."
             a "¿¡LAS 1 DE LA TARDE?!"
@@ -189,41 +189,41 @@ menu primera_decision:
         c "Bueno... Cuéntame. ¿Cómo estuvo tu fin de semana?"
         menu segunda_decision:
             set menuset
-            "Como deberia responderle?"
+            "¿Como deberia responderle?"
 
             "De muy buena manera":
                 $ Cha = Cha + 2
                 a "Bastante bien la verdad! Fui al cine a ver una película."
                 a "Aunque la verdad ni me gusto, pero bueno."
-                c "Jaja! Entiendo! Yo la verdad no he hecho mucho!"
-                c "Pero bueno, vas de camino a la universidad?"
+                c "¡Jaja! ¡Entiendo! ¡Yo la verdad no he hecho mucho!"
+                c "¿Pero bueno, vas de camino a la universidad?"
 
             "Normal":
                 $ Cha = Cha - 1
                 a "Bien, Nada que decir la verdad."
-                c "Oh, entiendo!"
-                c "Bueno, vas de camino a la universidad?"
+                c "¡Oh, entiendo!"
+                c "¿Bueno, vas de camino a la universidad?"
 
             "De mala manera":
                 $ Cha = Cha - 2
                 a "Decente."
-                c "…Ya veo… Ejem, es bueno oírlo!"
-                c "Pero bueno, vas de camino a la universidad?"
+                c "…Ya veo… Ejem ¡Es bueno oírlo!"
+                c "¿Pero bueno, vas de camino a la universidad?"
 
 label wow_pero_despues_2:
-    a "Si, si. Dicen que los primeros días son algo complicados, no?"
-    c "Claro! Yo aun no estoy 100 por ciento segura si es que estoy en la clase correcta! Jeje."
+    a "Si, si. Dicen que los primeros días son algo complicados ¿no?"
+    c "¡Claro! ¡Yo aun no estoy 100 por ciento segura si es que estoy en la clase correcta! Jeje."
     scene bg entrada_ula
     show catalina feliz at mitad_mitad_izquierda with dissolve
-    c "Llegamos! Ah... Que cansancio."
+    c "¡Llegamos! Ah... Que cansancio."
     a "Si honestamente."
     scene bg entrada_edf
     show catalina feliz at mitad_mitad_izquierda with dissolve
     c "Bueno ¿Que clase tienes ahora? Yo tengo Química… Wahh…"
     a "Fuh… Buena suerte… A mí me toca matemáticas."
     a "Aunque espero que el profe no me pregunte nada, No he estudiado…"
-    c "Jaja! Entiendo, Bueno. Me voy a mi clase. Nos vemos!"
-    a "Nos vemos! Fuh..."
+    c "¡Jaja! Entiendo, Bueno. Me voy a mi clase ¡Nos vemos!"
+    a "¡Nos vemos! Fuh..."
     scene bg pasillo_3b
     narrator "Después de esquivar a todos los estudiantes apurados por llegar a sus clases, lograste llegar a la puerta de la clase."
     narrator "Tomando aire y exhalándolo, abriste la puerta de la sala de clases, pasando a esta."
@@ -233,10 +233,10 @@ label wow_pero_despues_2:
     show profe feliz at entrada_lenta_izquierda
     p "Buenas tardes alumnos! Hoy haremos un repaso para el parcial que tendremos mañana. A si que espero hayan estudiado!"
     narrator "La clase paso con normalidad... Hasta que..."
-    p "Bien… Quien sabe la respuesta de este ejercicio?"
+    p "Bien… ¿Quien sabe la respuesta de este ejercicio?"
     narrator "Todos se quedaron callados intentando ver a donde sea menos hacia la pizarra o al profesor."
-    p "… Bien, erm… [Jugador]! Podrías decirme cómo se resuelve este ejercicio?"
-    a "Ah!? Eh... Yo… Erm…"
+    p "… Bien, erm… ¡[Jugador]! ¿Podrías decirme cómo se resuelve este ejercicio?"
+    a "¿¡Ah!? Eh... Yo… Erm…"
     narrator "Diablos… No recuerdo como se hacía esto…"
 
 menu segundad_decision:
@@ -315,7 +315,7 @@ label wow_pero_despues_3:
     menu cuarta_desicion:
 
         set menuset
-        "Donde podria estar?"
+        "¿Donde podria estar?"
 
         "En la cafeteria":
             scene bg cafe
@@ -324,7 +324,7 @@ label wow_pero_despues_3:
 
         "En el pasillo":
             scene bg pasillo_2
-            a "Ahi esta! Aunque esta con alguien..."
+            a "¡Ahi esta! Aunque esta con alguien..."
 
         "En el gimnasio":
             scene bg gym
@@ -340,23 +340,23 @@ label wow_pero_despues_4:
 menu quinta_desicion:
 
         set menuset
-        "Le voy a hablar?"
+        "¿Le voy a hablar?"
 
         "Hablemosle de todas formas!":
             $ Intro = Intro + 1
             narrator "Dando un suspiro, y llenándome de valor, fui hacia el jefe de carrera mientras conversaba con esa otra persona."
-            a "Buenas tardes...! Usted es el jefe de carrera de [Carrera], Verdad...?"
-            j "Oh! Sip, ...Y tu eres..?"
+            a "Buenas tardes...! Usted es el jefe de carrera de [Carrera] ¿Verdad...?"
+            j "Oh! Sip ¿Y tu eres..?"
 
         "Que vergüenza... Mejor espero a que deje de hablar con esa persona...":
             $ Extro = Extro + 1
             "Es mejor, asi no los interrumpo... Puede que esten hablando algo importante..."
             "Aunque... El jefe de carrera se percato que lo quede viendo, y junto con la otra persona, vinieron hacia donde estaba."
-            j "Vi que te quedaste viendonos... Querias hablar con alguno de nosotros?"
-            a "A...ah! Sip, vera..."
+            j "Vi que te quedaste viendonos... ¿Querias hablar con alguno de nosotros?"
+            a "¡A...ah! Sip, vera..."
             
 label wow_pero_despues_5:
-    a "Mi nombre es [Jugador]... El profesor Andre me dijo que venga a hablar con usted... Les molesto?"
+    a "Mi nombre es [Jugador]... El profesor Andre me dijo que venga a hablar con usted... ¿Les molesto?"
     t "Oh, No no… El jefe de carrera es todo tuyo. Aunque también me gustaría hablarte después."
     narrator "Dijo el tutor mientras se iba un poco al lado para no estorbar entre la conversación, poniéndose sus audífonos y viendo su telefono."
     menu quintaa_desicion:
@@ -381,32 +381,32 @@ label wow_pero_despues_5:
             
 label wow_pero_despues_55: 
 
-    a "Ah! ¡Perfecto! ¿Y quién es el tutor?"
+    a "¡Ah! ¡Perfecto! ¿Y quién es el tutor?"
     j "Pues, el chico con en que estaba hablando antes."
-    a "Oh, ya veo. Bueno, en ese caso le hablare a él. Muchas gracias!"
+    a "Oh, ya veo. Bueno, en ese caso le hablare a él ¡Muchas gracias!"
     j "Por cierto..."
     menu Sexta_desicion:
 
         set menuset
-        j "De donde eres?"
+        j "¿De donde eres?"
 
         "De aqui":
-            a "Pues de aqui, Por que la pregunta?"
-            j "Oh! No, por nada."
+            a "Pues de aqui ¿Por que la pregunta?"
+            j "¡Oh! No, por nada."
 
         "De otra parte":
             $ act_m = 1
-            a "De otra parte, Por qué pregunta?"
+            a "De otra parte ¿Por qué pregunta?"
             j "Oh, por nada."
 label wow_pero_despues_6: 
     j "Bueno, me tengo que ir. Nos vemos despúes."
-    a "Oh! Está bien, nos vemos!"
-    narrator "Después de hablar con el jefe de carrera, me gire hacia donde estaba el tutor, aun viendo su celular con sus audífonos puestos."
+    a "¡Oh! Está bien ¡os vemos!"
+    narrator "Después Nde hablar con el jefe de carrera, me gire hacia donde estaba el tutor, aun viendo su celular con sus audífonos puestos."
     a "Eh... ¿Disculpa?"
-    t "Ah? Si si, perdona… Cuéntame, que necesitas?"
+    t "¿Ah? Si si, perdona… Cuéntame ¿Que necesitas?"
     a "Pues… No sé si escuchaste…"
-    t "Jaja! No te preocupes, ni me puse música. Así que escuche todo."
-    a "Oh! Fuh... qué alivio. No quería volver a repetirlo."
+    t "¡Jaja! No te preocupes, ni me puse música. Así que escuche todo."
+    a "¡Oh! Fuh... qué alivio. No quería volver a repetirlo."
     t "Mhm, Por cierto..."
     menu Septima_desicion:
 
@@ -417,16 +417,16 @@ label wow_pero_despues_6:
             a "Pues bastante bien! Aunque a mí me ha costado un poco…"
             t "Entiendo, bueno. Ahí te hablare para coordinar mejor ese tema. ¿Vale?"
             t "No te preocupes. A todos les cuesta un poco."
-            a "Vale! Muchas gracias."
+            a "¡Vale! Muchas gracias."
         "Aguantando como puedes":
             a "Pues he estado aguantándo como puedo."
             t "Claro, entiendo. Bueno, Ahí te hablare para coordinar mejor ese tema. ¿Vale?"
-            a "Vale! Muchas gracias."
+            a "¡Vale! Muchas gracias."
         "Decirle porque vienes a hablarle":
             a "Bueno… Si enserio escucho como me ha ido, pues…"
             t "Entiendo, bueno. Ahí te hablare para coordinar mejor ese tema. ¿Vale?"
-            t "Tu solo enfócate en estudiar mas, vale?"
-            a "Vale! Muchas gracias."
+            t "Tu solo enfócate en estudiar mas ¿Vale?"
+            a "¡Vale! Muchas gracias."
 label wow_pero_despues_7: 
     narrator "Despues de hablarle al tutor, sentiste como un peso se liberó de ti. Ya no quedaba nada más que hacer, que irte a casa."
 
@@ -435,7 +435,7 @@ label ruta_extra_1:
             jump wow_pero_despues
         else:
             p "Entiendo, Bueno. No tengo nada mas que decirte mas que estudies harto para que te vaya bien en esta prueba. ¿Vale? Aun puedes remontar."
-            a "Si profesor! Lo hare."
+            a "¡Si profesor! Lo hare."
             p "Bien. Ya puedes irte. Que te vaya bien."
             a "Vale, Nos vemos mañana profe."
             scene bg camino
@@ -444,9 +444,9 @@ label ruta_extra_1:
             show kevin neutral at entrada_lenta_izquierda
             n "Hola. ¿Cómo estás? Eres de primer año en la carrera [Carrera], ¿No?"
             narrator "Miraste al chico algo extrañado… ¿Quien inicia una conversación así? Aunque aún así le respondiste sin pensarlo mucho."
-            a "Uh… ¿Si? Como lo sabes?"
-            n "Jeje! Me presento. Me llamo Kevinazo, soy el tutor de matemáticas."
-            a "Oh! Buenas. Me llamo [Jugador]."
+            a "Uh… ¿Si? ¿Como lo sabes?"
+            n "¡Jeje! Me presento. Me llamo Kevinazo, soy el tutor de matemáticas."
+            a "¡Oh! Buenas. Me llamo [Jugador]."
             t "Mh, Ya veo..."
         menu decision_EX1:
 
@@ -454,12 +454,12 @@ label ruta_extra_1:
             t "¿Como les va a los de primer año?"
 
             "De aquí":
-                a "Pues de aqui, Por que la pregunta?"
+                a "Pues de aqui ¿Por que la pregunta?"
                 t "No, por nada. Solo curiosidad."
 
             "De otra parte":
                 $ act_m = 1
-                a "De otra parte, Por qué pregunta?"
+                a "De otra parte ¿Por qué pregunta?"
                 t "Mh! Ya veo. Es solo para conocerte mejor."
 label wow_pero_despues_EX1: 
         menu decision_EX2:
@@ -467,8 +467,8 @@ label wow_pero_despues_EX1:
             set menuset
             t "Y… ¿Cómo te va haciendo amigos? ¿Has hecho muchos?"
 
-            "Muchos amigos!":
-                a "Tengo muchos amigos! Ya hasta tengo un grupito."
+            "¡Muchos amigos!":
+                a "¡Tengo muchos amigos! Ya hasta tengo un grupito."
                 t "Qué bueno! Es bueno tener muchos amigos, así se pueden apoyar mutuamente."
 
             "Por ahora solo tengo uno":
@@ -483,27 +483,27 @@ label wow_pero_despues_EX2:
         menu decision_EX3:
 
             set menuset
-            t "Y cómo van tus notas? He escuchado que a muchos les ha costado bastante."
+            t "¿Y cómo van tus notas? He escuchado que a muchos les ha costado bastante."
 
             "Bien":
                 a "Pues bastante bien! Nada que decir la verdad."
-                t "Entiendo, bueno. Pues sigue dándolo todo, así conseguirás mejores resultados!"
-                a "Entiendo, lo daré todo!"
+                t "Entiendo, bueno. ¡Pues sigue dándolo todo, así conseguirás mejores resultados!"
+                a "Entiendo ¡Lo daré todo!"
 
             "Aguantando como puedo":
                 a "Pues he estado aguantándolo como puedo."
-                t "Entiendo, bueno. Pues sigue dándolo todo, así conseguirás mejores resultados!"
-                a "Entiendo, Daré lo mejor de mí!"
+                t "Entiendo, bueno. ¡Pues sigue dándolo todo, así conseguirás mejores resultados!"
+                a "Entiendo ¡Daré lo mejor de mí!"
 
             "Honestamente, Mal":
-                a "Bueno… La verdad es que no me ha ido tan bien… Pero puedo remontarla!"
-                t "Ya veo, mientras estudies y comprendas los contenidos, Estas para el 7!"
-                a "Vale, Estudiare mucho hoy entonces!"
-                narrator "Así que si más, Te pusiste tus audífonos y empezaste a caminar hacia tu casa."
+                a "Bueno… La verdad es que no me ha ido tan bien… ¡Pero puedo remontarla!"
+                t "Ya veo, mientras estudies y comprendas los contenidos ¡Estas para el 7!"
+                a "Vale ¡Estudiare mucho hoy entonces!"
+                narrator "Así que sin más te pusiste tus audífonos y empezaste a caminar hacia tu casa."
 label wow_pero_despues_EX3: 
                 narrator "Derrepente, Kevinazo se quedo parado."
-                t "Bueno, Aquí nos separamos. Nos vemos! Espero verte mas seguido."
-                a "Ah- Claro! ¡Nos vemos!"
+                t "Bueno, Aquí nos separamos.¡Nos vemos! Espero verte mas seguido."
+                a "Ah- ¡Claro! ¡Nos vemos!"
                 narrator "Después de hablarle al tutor, sentiste como un peso se liberó de ti. Ya no quedaba nada más que llegar a casa."
                 narrator "Ya una vez en esta… Tenías que decidir qué hacer."
                 jump wow_pero_despues
@@ -523,7 +523,7 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
             narrator "Y sin más, Te dispusiste a estudiar antes de irte a dormir. Te dormiste un poco más tarde, pero ya estabas para el parcial de mañana."
             narrator "Ya una vez en tu cama, tus ojos se cerraron por si solos."
         "No dormir":
-            a "Es muy temprano como para dormir! Tengo que aprovechar todo el tiempo que tengo!"
+            a "¡Es muy temprano como para dormir! ¡Tengo que aprovechar todo el tiempo que tengo!"
             narrator "Así que, empezaste a hacer todo lo posible, estudiar, repasar, Hasta ordenaste tu pieza"
             narrator "Caíste a tu cama totalmente exhausto, durmiéndote casi instantáneamente."
             if dormir == 1:
@@ -538,7 +538,7 @@ label wow_pero_despues_de_la_hiper_decision:
     narrator "Te estiras para agarrar tu celular y ver la hora, el cual muestra las 7:30 de la mañana"
     a "Que buena hora para despertar e ir a la universidad"
     narrator "Te levantas y te arreglas para salir de a la U, en el camino hacia esta, ves a lo lejos a tu amiga, y al mirar mejor pareciera que esta con alguien que no conoces."
-    narrator "Te acercas y no estas seguro si saludar solo a tu amiga o ambos."
+    narrator "Te acercas y no sabes si saludar solo a tu amiga o ambos."
     scene bg camino
     menu DIA2_DEC1:
 
@@ -574,9 +574,9 @@ label nombre:
 label DIA2_DES1:
     menu DIA2_DEC2:
         set menuset
-        n "Yo me llamo Felipe, te ves super buena onda!, asi de pasada ah sido un gusto conocerte"
-        "Le dices que ah sido un gusto conocerlo también y le das la mano":
-            f "Y que planes tienen para hoy?"
+        n "Yo me llamo Felipe ¡Te ves super buena onda!, asi de pasada haa sido un gusto conocerte"
+        "Le dices que ha sido un gusto conocerlo también y le das la mano":
+            f "¿Y que planes tienen para hoy?"
             $ Voley = Voley + 1
             $ Cha = Cha + 1
             jump DIA2_DES2
@@ -589,7 +589,7 @@ label DIA2_DES2_C:
     if Flag1 == 1:
         jump DIA2_DES2
     narrator "Esto lleva a que Cata haga una pregunta"
-    c "Y que planes tienen para hoy?"
+    c "¿Y que planes tienen para hoy?"
 label DIA2_DES2:
     menu DIA2_DEC3:
 
@@ -605,27 +605,27 @@ label DIA2_DES2:
 label DIA2_DES3:
     narrator "Durante la conversación llegan los tres a la universidad y se separan llendo cada uno a sus clases"
     scene bg entrada_ula
-    a "Bueno, nos vemos más tarde!, o quizás en un rato más, quien sabe"
-    c "Si, nos vamos rápido porque ya vamos algo tarde"
-    f "Eso!, adiós!"
+    a "Bueno ¡Nos vemos más tarde! O quizás en un rato más, quien sabe"
+    c "Si, nos vamos rápido porque ya estamos algo tarde"
+    f "¡Eso! ¡Adiós!"
     scene bg clase
-    narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte, cuando lo encuentras te sientas y esperar que llegue el profesor"
+    narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte, cuando lo encuentras te sientas y esperas que llegue el profesor"
     narrator "El profesor llega a la clase dando un anuncio"
     p "Bueno chicos y chicas, lo que sigue ahora es nuestro proyecto semestral grupal, asi que espero que puedan hacer todos grupos"
     menu DIA2_DEC4:
         
         set menuset
-        "Que haces?"
+        "¿Que haces?"
 
         "Decides ir y preguntarle a algunos de tus compañeros si quieren hacer grupo contigo":
-            a "Hola! Quería saber si puedo hacer grupo con ustedes, si no es molestia"
+            a "¡Hola! ¿Quería saber si puedo hacer grupo con ustedes? Si no es molestia"
             n "Si, puedes ser con nosotros"
             $ Cha = Cha + 2
             $ Extro = Extro + 1
             jump DIA2_DES4
         "Esperas a ver si alguno de tus compañeros te pregunta":
             narrator "Se te acerca un compañero"
-            n "Oye, vi que estas solo, te falta grupo? De ser asi puedes ser con nosotros"
+            n "Oye, vi que estas solo ¿Te falta grupo? De ser asi puedes ser con nosotros"
             a "Oh gracias, de echo si me faltaba un grupo para trabajar"
             $ Cha = Cha - 1
             $ Intro = Intro + 1
@@ -638,12 +638,12 @@ label DIA2_PROF:
     menu DIA2_DEC5_PROF:
 
         set menuset
-        p "Veo que sigue sin equipo, planea hacer el trabajo sin compañeros?"
+        p "Veo que sigue sin equipo ¿Planea hacer el trabajo sin compañeros?"
 
         "Le dices que no encontraste grupo":
-            a "Si profesor, es que no logre encontrar un grupo que le faltara persona"
+            a "Si profesor, es que no logre encontrar un grupo al que le faltara persona"
             p "Esta bien"
-        "Le dices que quisiste hacerlo solo":
+        "Le dices que quisiste hacerlo sin nadie mas":
             a "Si profesor, me gusta más trabajar individualmente"
             p "Esta bien"
     narrator "La clase termina"
@@ -666,17 +666,17 @@ label DIA2_DES4:
 
         "Gracias por preguntar! He estado bien hoy":
             $ Cha = Cha + 1
-        "La verdad es que eh estado normal desde ayer":
+        "La verdad es que he estado normal desde ayer":
             $ Cha = Cha - 1
     if Ruta_tutor != 1:
         j "Es bueno que no estes mal, y como te fue con el tutor ayer?"
     else:
         t "Es bueno que no estes mal, y como te fue con el jefe de carrera ayer?"
-    a "Ayer, hable con el, pero me dijo que me hablaría para organizar bien las fechas, asi que no eh sabido nada"
+    a "Ayer, hable con el, pero me dijo que me hablaría para organizar bien las fechas, asi que no he sabido nada"
     if Ruta_tutor != 1:
-        j "Las remediales aveces son dificiles, asi que te recomiendo prepararte desde ya estudiando de apoco"
+        j "Las remediales a veces son dificiles, asi que te recomiendo prepararte desde ya estudiando de a poco"
     else:
-        t "Las remediales aveces son dificiles, asi que te recomiendo prepararte desde ya estudiando de apoco"
+        t "Las remediales a veces son dificiles, asi que te recomiendo prepararte desde ya estudiando de a poco"
     a "Gracias por el consejo, lo tomare en cuenta"
 label DIA2_DES5:
     if Ruta_tutor == 1:
@@ -755,7 +755,7 @@ label fin:
         "{color=#ffffff}No eres ni extremadamente introvertido o extrovertido, lo cual es algo bueno! Puede que se haga fácil o se te complique hacer amigos, dependiendo de la situacion\n"
 
     if act_m==1:
-        "{color=#ffffff}Como tienes tus metas claras, sabes a lo que vienes, asi que se te hara fácil adaptarte a la universidad 
+        "{color=#ffffff}Como tienes tus metas claras, sabes a lo que vienes, asi que se te hara más fácil adaptarte a la universidad 
 
     else:
         "{color=#ffffff}Como no tienes tus metas claras, se te puede dificultar un poco adaptarte a la universidad, ya que no sabes con certeza a lo que vienes a esta.\n"

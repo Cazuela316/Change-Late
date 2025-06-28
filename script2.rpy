@@ -4,20 +4,20 @@ label voley:
     scene bg camino
     menu voley_1:
         set menuset
-        f "Oye! [Jugador]!, te gustaría venir conmigo al taller de vóley?"
+        f "¡Oye! ¡[Jugador]! ¿Te gustaría venir conmigo al taller de vóley?"
 
         "No gracias, no estoy muy interesado en los deportes la verdad":
-            f "Esta bien! Entonces nos vemos luego"
+            f "¡Esta bien! Entonces nos vemos luego"
             $ Voley = Voley - 1
             jump saltito
-        "Bueno, te acompaño, así conozco más!":
+        "¡Bueno, te acompaño, así conozco más!":
             f "Va! Vamos"
 label VO_DES1:
     narrator "Ambos caminan hasta el gimnasio y Felipe te pregunta"
     scene bg gym
     menu voley_2:
         set menuset
-        f "Oye, te caigo bien?"
+        f "¿Oye, te caigo bien?"
 
         "Si de echo me caes bastante bien":
             $ Cha = Cha + 1
@@ -54,7 +54,7 @@ label fin2:
     narrator "Rápidamente fuiste por tu celular, prendiéndolo y revisando la hora."
     a "..."
     a "¿¡LAS 3 DE LA TARDE!?"
-    a "Maldita sea… Me quede dormido de nuevo!"
+    a "¡Maldita sea… Me quede dormido de nuevo!"
     narrator "Soltaste un muy largo suspiro."
     a "Tsh… Supongo que podría ir a comprar cosas cocinar algo…"
-    a "Aghhh!!! Porque tuve que quedarme dormido denuevo...!!!"
+    a "¡¡¡Aghhh!!! ¡¡¡Porque tuve que quedarme dormido denuevo...!!!"
