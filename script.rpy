@@ -540,6 +540,8 @@ label wow_pero_despues_de_la_hiper_decision:
     narrator "Te levantas y te arreglas para salir de a la U, en el camino hacia esta, ves a lo lejos a tu amiga, y al mirar mejor pareciera que esta con alguien que no conoces."
     narrator "Te acercas y no sabes si saludar solo a tu amiga o ambos."
     scene bg camino
+    show catalina feliz at mitad_izquierda
+    show felipe feliz at mitad_centro
     menu DIA2_DEC1:
 
         set menuset
@@ -549,6 +551,8 @@ label wow_pero_despues_de_la_hiper_decision:
             a "¡Ah! Hola cata ¿Como estuviste ayer? al final no te perdiste ¿O si?"
             c "¡No, no me perdi!, y creo que me fue bastante bien ayer, además de que entendí todo"
             a "Ah… eso es bueno, me alegro por ti"
+            hide felipe feliz
+            show felipe neutral at mitad_centro
             $  Cha = Cha - 1
             jump DIA2_DES2_C
         "Saludas a ambos":
@@ -559,6 +563,8 @@ label wow_pero_despues_de_la_hiper_decision:
             n "Hola amigo ¿Cual es tu nombre? Para saber como llamarte"
             $  Cha = Cha + 1
 label nombre:
+    show catalina feliz at mitad_izquierda
+    show felipe feliz at mitad_centro
     menu HOLAA:
         set menuset
         narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
@@ -569,9 +575,12 @@ label nombre:
             $ Flag1 = Flag1 +1
         "No le digo mi nombre":
             a "Que te importa"
+            show felipe incomodo at mitad_centro
             $ Cha = Cha -1
             jump DIA2_DES2_C
 label DIA2_DES1:
+    show catalina feliz at mitad_izquierda
+    show felipe feliz at mitad_centro
     menu DIA2_DEC2:
         set menuset
         n "Yo me llamo Felipe ¡Te ves super buena onda!, asi de pasada haa sido un gusto conocerte"
@@ -586,11 +595,15 @@ label DIA2_DES1:
             $ Cha = Cha + 1
 
 label DIA2_DES2_C:
+    show catalina feliz at mitad_izquierda
+    show felipe feliz at mitad_centro
     if Flag1 == 1:
         jump DIA2_DES2
     narrator "Esto lleva a que Cata haga una pregunta"
     c "¿Y que planes tienen para hoy?"
 label DIA2_DES2:
+    show catalina feliz at mitad_izquierda
+    show felipe feliz at mitad_centro
     menu DIA2_DEC3:
 
         set menuset
@@ -605,13 +618,19 @@ label DIA2_DES2:
 label DIA2_DES3:
     narrator "Durante la conversación llegan los tres a la universidad y se separan llendo cada uno a sus clases"
     scene bg entrada_ula
+    show catalina feliz at mitad_izquierda
+    show felipe feliz at mitad_centro
     a "Bueno ¡Nos vemos más tarde! O quizás en un rato más, quien sabe"
     c "Si, nos vamos rápido porque ya estamos algo tarde"
     f "¡Eso! ¡Adiós!"
+    hide catalina feliz
+    hide felipe feliz 
     scene bg clase
+    show profe neutral at mitad_centro
     narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte, cuando lo encuentras te sientas y esperas que llegue el profesor"
     narrator "El profesor llega a la clase dando un anuncio"
     p "Bueno chicos y chicas, lo que sigue ahora es nuestro proyecto semestral grupal, asi que espero que puedan hacer todos grupos"
+    hide profe neutral
     menu DIA2_DEC4:
         
         set menuset
@@ -634,7 +653,7 @@ label DIA2_DES3:
             $ Cha = Cha - 2
             $ Intro = Intro + 2
 label DIA2_PROF:
-    
+    show profe neutral at mitad_izquierda
     menu DIA2_DEC5_PROF:
 
         set menuset
@@ -642,9 +661,13 @@ label DIA2_PROF:
 
         "Le dices que no encontraste grupo":
             a "Si profesor, es que no logre encontrar un grupo al que le faltara persona"
+            hide profe neutral
+            show profe incomodo at mitad_izquierda
             p "Esta bien"
         "Le dices que quisiste hacerlo sin nadie mas":
             a "Si profesor, me gusta más trabajar individualmente"
+            hide profe neutral
+            show profe feliz at mitad_izquierda
             p "Esta bien"
     narrator "La clase termina"
     scene bg pasillo
@@ -655,9 +678,11 @@ label DIA2_DES4:
     scene bg camino
     if Ruta_tutor != 1:
         narrator "Decides irte a tu casa, en el camino a esta te encuentras con el jefe de carrera"
+        show juan feliz
         j "Hola [Jugador], como has estado desde ayer?"
     else:
         narrator "Decides irte a tu casa, en el camino a esta te encuentras con el tutor"
+        show kevin feliz
         t "Hola [Jugador], como has estado desde ayer?"
     menu DIA2_DEC6:
 
@@ -680,10 +705,13 @@ label DIA2_DES4:
     a "Gracias por el consejo, lo tomare en cuenta"
 label DIA2_DES5:
     if Ruta_tutor == 1:
-        j "A todo esto, sabes cuales son tus metas?"
+        show kevin feliz at mitad_centro
+        t "A todo esto, sabes cuales son tus metas?"
     elif Voley == 1:
+        show felipe feliz at mitad_centro
         f "A todo esto, sabes cuales son tus metas?"
     else:
+        show juan feliz at mitad_centro
         j "A todo esto, sabes cuales son tus metas?"
     scene bg camino
     menu DIA2_DEC7:
@@ -692,14 +720,17 @@ label DIA2_DES5:
 
         "La verdad es que me meti a la carrera porque eh escuchado que pagan bien":
             if Ruta_tutor == 1:
-                j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
+                show kevin feliz at mitad_centro
+                t "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
             elif Voley == 1:
+                show felipe feliz at mitad_centro
                 f "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
             else:
+                show juan feliz at mitad_centro
                 j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien"
         "Si, tengo muy claras mis metas para ahora y el futuro":
             if Ruta_tutor == 1:
-                j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
+                t "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
             elif Voley == 1:
                 f "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho"
             else:
