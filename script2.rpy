@@ -1,23 +1,27 @@
-
 label voley:
-    narrator "Al salir de la clase te encuentras con Felipe"
-    scene bg camino
+    narrator "Aunque justo al salir de la clase, te encuentras con Felipe"
+    show felipe feliz at entrada_lenta_izquierda
     menu voley_1:
         set menuset
-        f "¡Oye! ¡[Jugador]! ¿Te gustaría venir conmigo al taller de vóley?"
+        f "Oye! [Jugador]!, te gustaría venir conmigo al taller de vóley?"
 
         "No gracias, no estoy muy interesado en los deportes la verdad":
-            f "¡Esta bien! Entonces nos vemos luego"
+            f "Esta bien! Entonces nos vemos luego"
             $ Voley = Voley - 1
+            show felipe neutral at salida_izquierda_lenta
+            narrator "Sin mas que hacer en la universidad. Empezaste irte a tu casa."
+            show bg camino with dissolve
+            narrator "Aunque justo de camino, te encuentras con una cara conocida!"
+            a "Ese no es...?"
             jump saltito
-        "¡Bueno, te acompaño, así conozco más!":
+        "Bueno, te acompaño, así conozco más!":
             f "Va! Vamos"
 label VO_DES1:
     narrator "Ambos caminan hasta el gimnasio y Felipe te pregunta"
     scene bg gym
     menu voley_2:
         set menuset
-        f "¿Oye, te caigo bien?"
+        f "Oye, te caigo bien?"
 
         "Si de echo me caes bastante bien":
             $ Cha = Cha + 1
@@ -44,8 +48,19 @@ label VO_DES3:
     jump DIA2_DES5
 
 label sales_comprar:
-    narrator "Sales a comprar"
-    jump saltito
+        narrator "De la nada, te despertaste de repente, incluso hasta un poco con miedo, pero con tus 8 horas de sueño."
+        a "Wahhh! Que buena dormida. Uy, ¿Qué hora es?"
+        a "..."
+        a "¿¡LAS 3 DE LA TARDE?!"
+        a "Diablos… Me perdí todas mis clases!"
+        narrator "Soltaste un largo suspiro."
+        a "Bueno, supongo que si no fui a clase, deberia ir a comprarme algo con la baes..."
+        a "Tengo que aprovechar! Mañana vence despues de todo."
+        narrator "Entonces empezaste a vestirte, tomaste una de tus bolsas reutilizables y fuiste de camino al supermercado."
+        #cambiar escena a la calle
+        narrator "Estabas de camino al supermercado, hasta que viste a una cara conocida."
+        a "Ese no es...?"
+        jump saltito
 
 label fin2:
 
@@ -54,7 +69,7 @@ label fin2:
     narrator "Rápidamente fuiste por tu celular, prendiéndolo y revisando la hora."
     a "..."
     a "¿¡LAS 3 DE LA TARDE!?"
-    a "¡Maldita sea… Me quede dormido de nuevo!"
+    a "Maldita sea… Me quede dormido de nuevo!"
     narrator "Soltaste un muy largo suspiro."
     a "Tsh… Supongo que podría ir a comprar cosas cocinar algo…"
-    a "¡¡¡Aghhh!!! ¡¡¡Porque tuve que quedarme dormido denuevo...!!!"
+    a "Aghhh!!! Porque tuve que quedarme dormido denuevo...!!!"
