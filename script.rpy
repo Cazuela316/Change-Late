@@ -30,6 +30,12 @@ image profe triste = "PROFE_TRISTE.png"
 image profe neutral = "PROFE_NORMAL.png"
 image profe incomodo = "PROFE_INC.png"
 image bg negro = "#000000"
+image bg cielo = "image.png"
+image cuadrado = "color2.png"
+transform amongus:
+    xzoom 1.5 yzoom 0.5
+    xalign 0.5
+    yalign 0.5
 transform mitad_derecha:
     zoom 0.5
     xalign 1.0
@@ -815,49 +821,48 @@ label DIA2_DES5:
             else:
                 j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas, te recomiendo seguir buscando para que definas lo que quieras hacer."
 label fin:
-    
-    scene bg negro
-    show catalina feliz at fuera_izquierda_al_centro
-    centered "{color=#ffffff}¡Hola!¡Estoy aqui para mostrarte tus resultados! Estas son las estadisticas con las que acabaste:\nCarisma:[Cha]\nInteligencia:[Int]\nIntrovertidismo:[Intro]\nExtrovertidismo:[Extro]\nResponsabilidad:[Res].{/color}"
+    scene bg cielo
+    show cuadrado at amongus
+    centered "{color=#ffffff}¡Hola!¡Estoy aqui para mostrarte tus resultados!{/color}"
     if Cha>=-8 and Cha<=-5:
-        centered "{color=#ffffff}No es por sonar pesada... pero con tu forma de ser, se te puede resultar complicado\n"
+        centered "{color=#ffffff}Cha:[Cha]/6\nNo es por sonar pesada... pero con tu forma de ser, se te puede resultar complicado\n"
     elif Cha>=-4 and Cha <= -1:
-        centered "{color=#ffffff}Te va a costar hacer amigos, te recomendamos mejorar tu forma de responder para que hacer amigos se te sea más fácil\n"
+        centered "{color=#ffffff}Cha:[Cha]/6\nTe va a costar hacer amigos, te recomendamos mejorar tu forma de responder para que hacer amigos se te sea más fácil\n"
     elif Cha==1 or Cha==0:
-        centered "{color=#ffffff}Es una persona neutra puede que le cueste hacer amigos o no, depende de cómo te sientas\n"
+        centered "{color=#ffffff}Cha:[Cha]/6\nEs una persona neutra puede que le cueste hacer amigos o no, depende de cómo te sientas\n"
     elif Cha>=2 and Cha<=5:
-        centered "{color=#ffffff}No tendrá problema en hacer amigos, pero con algunos tipos de persona no te puedes relacionar tan bien\n"
+        centered "{color=#ffffff}Cha:[Cha]/6\nNo tendrá problema en hacer amigos, pero con algunos tipos de persona no te puedes relacionar tan bien\n"
     else:   
-        centered "{color=#ffffff}Con su forma de ser, no se le hará problema hacer amigos\n"
+        centered "{color=#ffffff}Cha:[Cha]/6\nCon su forma de ser, no se le hará problema hacer amigos\n"
     
     if Res==-2 or Res==-1:
-        centered "{color=#ffffff}Tienes poco sentido de la responsabilidad, se te va a complicar adaptarte a muchas cosas en la universidad\n"
+        centered "{color=#ffffff}Res:[Res]/3\nTienes poco sentido de la responsabilidad, se te va a complicar adaptarte a muchas cosas en la universidad\n"
     elif Res==0:
-        centered "{color=#ffffff}Te va costar el cambio a la universidad, te recomendamos mejorar tu sentido de la responsabilidad para adaptarte mejor a la universidad\n"
+        centered "{color=#ffffff}Res:[Res]/3\nTe va costar el cambio a la universidad, te recomendamos mejorar tu sentido de la responsabilidad para adaptarte mejor a la universidad\n"
     elif Res==1 or Res==2:
-        centered "{color=#ffffff}Tienes un buen sentido de la responsabilidad, pero puedes mejorarlo\n"
+        centered "{color=#ffffff}Res:[Res]/3\nTienes un buen sentido de la responsabilidad, pero puedes mejorarlo\n"
     else:
-        centered "{color=#ffffff}Tienes un fuerte sentido de la responsabilidad, no te constara tanto al cambio\n"
+        centered "{color=#ffffff}Res:[Res]/3\nTienes un fuerte sentido de la responsabilidad, no te constara tanto al cambio\n"
 
     if Int==-4 or Int==-3:
-        centered "{color=#ffffff}Adaptarte te será difícil, pero si aprendes sobre hábitos de estudio y te mantienes constante puedes mejorarlo\n"
+        centered "{color=#ffffff}Int:[Int]/5\nAdaptarte te será difícil, pero si aprendes sobre hábitos de estudio y te mantienes constante puedes mejorarlo\n"
     elif Int==-2 or Int==-1:
-        centered "{color=#ffffff}Quizas aun no estas perfectamente acostumbrado a la universidad, debes seguir estudiando con regularidad para adaptarte\n"
+        centered "{color=#ffffff}Int:[Int]/5\nQuizas aun no estas perfectamente acostumbrado a la universidad, debes seguir estudiando con regularidad para adaptarte\n"
     elif Int==0:
-        centered "{color=#ffffff}Eres una persona  que tiene potencial pero que quizás no lo intenta lo suficiente\n"
+        centered "{color=#ffffff}Int:[Int]/5\nEres una persona  que tiene potencial pero que quizás no lo intenta lo suficiente\n"
     elif Int==1 or Int==2:
-        centered "{color=#ffffff}Sabes algunas cosas pero es importante siempre aprender más\n"
+        centered "{color=#ffffff}Int:[Int]/5\nSabes algunas cosas pero es importante siempre aprender más\n"
     elif Int==3 or Int==4:
-        centered "{color=#ffffff}Eres bastante inteligente, si estudias usualmente tu adaptación estará casi asegurada\n"
+        centered "{color=#ffffff}Int:[Int]/5\nEres bastante inteligente, si estudias usualmente tu adaptación estará casi asegurada\n"
     else: 
-        centered "{color=#ffffff}Eres muy inteligente, no deberías tener problemas adaptándose mientras tengas un poco de cuidado\n"
+        centered "{color=#ffffff}Int:[Int]/5\nEres muy inteligente, no deberías tener problemas adaptándose mientras tengas un poco de cuidado\n"
 
     if Intro>Extro:
-        centered "{color=#ffffff}Eres una persona muy introvertida, puede que se te haga problemas hacer amigos, pero si es que te determinas a ello, podrás lograrlo!\n"
+        centered "{color=#ffffff}Intro:[Intro]\nEres una persona muy introvertida, puede que se te haga problemas hacer amigos, pero si es que te determinas a ello, podrás lograrlo!\n"
     elif Extro>Intro:
-        centered "{color=#ffffff}Eres una persona muy extrovertida, no se te hará problemas hacer amigos. ¡Así que consigue un buen grupo de amigos!\n"
+        centered "{color=#ffffff}Extro:[Extro]\nEres una persona muy extrovertida, no se te hará problemas hacer amigos. ¡Así que consigue un buen grupo de amigos!\n"
     else:
-        centered "{color=#ffffff}No eres ni extremadamente introvertido o extrovertido, lo cual es algo bueno! Puede que se haga fácil o se te complique hacer amigos, dependiendo de la situacion\n"
+        centered "{color=#ffffff}Intro:[Intro]=Extro:[Extro]\n No eres ni extremadamente introvertido o extrovertido, lo cual es algo bueno! Puede que se haga fácil o se te complique hacer amigos, dependiendo de la situacion\n"
 
     if act_m==1:
         centered "{color=#ffffff}Como tienes tus metas claras, sabes a lo que vienes, asi que se te hara más fácil adaptarte a la universidad"
@@ -869,6 +874,7 @@ label fin:
         centered "{color=#ffffff}Como eres de otra parte, lo más probable es que perderá su círculo social, es importante que busque un grupo en donde apoyarse\n"
     else:
         centered "{color=#ffffff}Como eres de aquí, no perderás tu circulo social, asi que igual es bueno apoyar a las personas que pierdan su circulo social, asi podras tener mas amigos\n"
+    return
 return
 
 
