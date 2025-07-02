@@ -29,6 +29,8 @@ image profe feliz = "PROFE_FELIZ.png"
 image profe triste = "PROFE_TRISTE.png"
 image profe neutral = "PROFE_NORMAL.png"
 image profe incomodo = "PROFE_INC.png"
+image pieza_dia = "Pieza(Dia).png"
+image pieza_noche = "Pieza(Noche).png"
 image bg negro = "#000000"
 image bg cielo = "image.png"
 image cuadrado = "color2.png"
@@ -117,6 +119,8 @@ image bg jardin = "Jardin_botanico.jpg"
 image bg jardin_b = "Jardin_botanico_b.jpg"
 image bg gym = "Gimnasio.jpg"
 image bg clase = "Sala_de_clase.jpg"
+image bg pieza_dia = "Pieza_Dia.png"
+image bg pieza_noche = "Pieza_Noche.png"
       
 
 # El juego comienza aquí.
@@ -167,7 +171,8 @@ label start:
             $ player_pronoun_reflexive = "elle misme"
             $ player_pronoun_subject = "they"
 
-
+    play music "Pajaritos.mp3" fadein 2.0 loop
+    show bg pieza_dia with dissolve
     a "Waah… Fuh… Todavía tengo sueño…"
     narrator "Con algo de dificultad y aun no teniendo todos tus sentidos despiertos, extendiste tu mano para alcanzar tu celular."
     a "¿Qué horas son?"
@@ -192,15 +197,23 @@ menu primera_decision:
             $ dormir = dormir + 1
             a "Bah, unas cuantas horas de sueño extra no harán mal…"
             narrator "Te dijiste a ti mismo, mientras te volvías a recostar, cerrando tus ojos…"
+            show bg negro with dissolve
+            stop music fadeout 1.0
+            show bg pieza_noche
             narrator "De la nada, te despertaste de repente, incluso hasta un poco con miedo, pero con tus 8 horas de sueño."
+            
             a "Wahhh! Que buena dormida. Uy, ¿Qué hora es?"
             a "..."
             a "¿¡LAS 1 DE LA TARDE?!"
             a "Diablos… Me perdí todas mis clases!"
             narrator "Soltaste un largo suspiro."
             a "Bueno, supongo que si no fui a clase al menos debería ordenar la casa..."
-            narrator "Dijiste mientras te levantabas de la cama, vistiendote y comenzando a ordenar."
+            narrator "Dijiste mientras te levantabas de la cama, vistiendote..."
+            play music "BMG_Tarde-Noche.mp3" fadein 3.0 loop
+            show bg negro with dissolve
+            narrator "...Y comenzando a ordenar."
             narrator "Estuviste todo el dia ordenando tu casa. Ya en la tarde..."
+            show bg pieza_noche with dissolve
             a "Fuah... Estuve todo el dia limpiando... ¡Pero al menos la casa quedo limpiecita!"
             narrator "Aunque, ahora tienes que decidir que hacer..."
             jump wow_pero_despues
@@ -208,9 +221,12 @@ menu primera_decision:
     "No":
         $ Res = Res + 1
         a "Urm… No! Tengo que ir a clase, Ademas es la hora perfecta para ir!"
+        stop music fadeout 1.0
         narrator "Dijiste, levantándote con todo el animo que podias, vistiéndote..."
         narrator "Lavándote los dientes y finalmente, saliendo de tu casa, sin antes dejar bien cerrado."
+        play sound "SFX_Salir.mp3" noloop
         scene bg camino
+        play music "BMG_Dia.mp3" fadein 4.0 loop
         narrator "Tomando un buen puñado de aire, empezaste a caminar hacia la universidad."
         narrator "Mientras veías como el chat grupal de la carrera se llenaba de mensajes."
         a "Tsk... No es necesario que cuenten toda su vida..."
@@ -220,7 +236,7 @@ menu primera_decision:
         narrator "Venia corriendo hacia ti una chica bastante alegre."
         show catalina feliz at entrada_lenta_izquierda
         c "Wahh!!! Qué bueno encontrarte [Jugador]!"
-        narrator "Es Catalina, una de las únicas amigas que, hasta el momento tengo en la universidad."
+        narrator "Es Catamaran, una de las únicas amigas que, hasta el momento tengo en la universidad."
         narrator "Es una buena amiga, aunque puede llegar a ser algo molesta."
         c "Bueno... Cuéntame. ¿Cómo estuvo tu fin de semana?"
         menu segunda_decision:
@@ -249,10 +265,12 @@ menu primera_decision:
 label wow_pero_despues_2:
     a "Si, si. Dicen que los primeros días son algo complicados, no?"
     c "Claro! Yo aun no estoy 100 por ciento segura si es que estoy en la clase correcta! Jeje."
+    play sound "SFX_Pasos.mp3" noloop
     scene bg entrada_ula
     show catalina feliz at mitad_mitad_izquierda with dissolve
     c "Llegamos! Ah... Que cansancio."
     a "Si honestamente."
+    play sound "SFX_Pasos.mp3" noloop
     scene bg entrada_edf
     show catalina feliz at mitad_mitad_izquierda with dissolve
     c "Bueno ¿Que clase tienes ahora? Yo tengo Química… Wahh…"
@@ -260,7 +278,8 @@ label wow_pero_despues_2:
     a "Aunque espero que el profe no me pregunte nada, No he estudiado…"
     c "Jaja! Entiendo, Bueno. Me voy a mi clase. Nos vemos!"
     a "Nos vemos! Fuh..."
-    scene bg pasillo_3b
+    play sound "SFX_Pasos.mp3" noloop
+    scene bg pasillo_3b with dissolve
     narrator "Después de esquivar a todos los estudiantes apurados por llegar a sus clases, lograste llegar a la puerta de la clase."
     narrator "Tomando aire y exhalándolo, abriste la puerta de la sala de clases, pasando a esta."
     scene bg clase
@@ -361,21 +380,25 @@ label wow_pero_despues_3:
 
         "En la cafeteria":
             scene bg cafe
+            play sound "SFX_Pasos.mp3" noloop
             a "Uy... No lo veo por aqui... mejor regreso a donde estaba."
             scene bg pasillo_3b
             jump cuarta_desicion
 
         "En el pasillo":
+            play sound "SFX_Pasos.mp3" noloop
             scene bg pasillo_2
             a "Ahi esta! Aunque esta con alguien..."
 
         "En el gimnasio":
+            play sound "SFX_Pasos.mp3" noloop
             scene bg gym
             a "Uy... No lo veo por aqui... mejor regreso a donde estaba."
             scene bg pasillo_3b
             jump cuarta_desicion
 
         "En el jardin botanico":
+            play sound "SFX_Pasos.mp3" noloop
             scene bg jardin
             a "Uy... No lo veo por aqui... mejor regreso a donde estaba."
             scene bg pasillo_3b
@@ -498,7 +521,7 @@ label wow_pero_despues_7:
     hide kevin feliz with dissolve
     show bg camino with dissolve
     narrator "Despues de una larga caminata, llegaste a tu casa."
-    show bg pieza with dissolve #aun no existe este sprite lol
+    show bg pieza_noche with dissolve #aun no existe este sprite lol
 
 label ruta_extra_1:
         if wow == 1:
@@ -510,9 +533,13 @@ label ruta_extra_1:
             a "Si profesor! Lo hare."
             p "Bien. Ya puedes irte. Que te vaya bien."
             a "Vale, Nos vemos mañana profe."
+            play sound "SFX_Pasos.mp3" noloop
             scene bg pasillo_3b with dissolve
             narrator "Saliste rápidamente de la sala de clase, soltando un suspiro..."
+            play sound "SFX_Pasos.mp3" noloop
             scene bg camino with dissolve
+            stop music fadeout 2.0
+            play music "BMG_Tarde-Noche.mp3" fadein 4.0 loop
             a "Para después irte rápidamente de la universidad, te pusiste tus audífonos y empezaste a caminar lentamente…"
             narrator "…Hasta que un extraño chico se te posiciono al lado tuyo mientras caminas hacia tu casa."
             show kevin neutral at fuera_izquierda_al_centro
@@ -583,11 +610,12 @@ label wow_pero_despues_EX3:
                 a "Ah- Claro! ¡Nos vemos!"
                 show kevin feliz at salida_izquierda_lenta
                 narrator "Después de hablarle al tutor, sentiste como un peso se liberó de ti. Ya no quedaba nada más que llegar a casa."
+                play sound "SFX_Pasos.mp3" noloop
                 show bg pieza with dissolve #aun no existe este sprite lol
+                narrator "Ya una vez en esta… Tenías que decidir qué hacer."
                 jump wow_pero_despues
 
 label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer dia hecho.
-    narrator "Ya una vez en esta… Tenías que decidir qué hacer."
     menu ya_no_se_que_decision_es_esta:
 
         set menuset
@@ -595,6 +623,8 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
 
         "Dormir sin más":
             a "Fuh.. Que cansancio... Mejor me voy a dormir…"
+            stop music fadeout 1.5
+            show bg negro with dissolve
             narrator "Y sin más, Te acostaste, tus ojos se cerraron por si solos."
         "Estudiar un poco antes de dormir":
             a "Yo creo que es buena idea estudiar un poco antes de dormir, después de todo tengo un parcial mañana…"
@@ -611,15 +641,27 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
 
             
 label wow_pero_despues_de_la_hiper_decision: 
-
+    narrator "Despues de una buena dormida..."
+    narrator "...Despiertas con las energias totalmente renovadas."
+    show bg pieza_dia with dissolve
+    play music "Pajaritos.mp3" fadein 2.0 loop
     a "Waah, otro día más de universidad, me pregunto que hora será"
     narrator "Te estiras para agarrar tu celular y ver la hora, el cual muestra las 7:30 de la mañana"
-    a "Que buena hora para despertar e ir a la universidad"
-    narrator "Te levantas y te arreglas para salir de a la U, en el camino hacia esta, ves a lo lejos a tu amiga, y al mirar mejor pareciera que esta con alguien que no conoces."
-    narrator "Te acercas y no sabes si saludar solo a tu amiga o ambos."
+    a "Que buena hora para despertar e ir a la universidad!"
+    narrator "Dijiste, levantándote con todo el animo con mucha energia, vistiendote..."
+    narrator "Lavándote los dientes y finalmente, saliendo de tu casa, sin antes dejar bien cerrado."
+    play sound "SFX_Salir.mp3" noloop
     scene bg camino
-    show catalina feliz at mitad_izquierda
-    show felipe feliz at mitad_centro
+    play music "BMG_Dia.mp3" fadein 4.0 loop
+    a "Huh, veamos si me pillo a Catamaran de camino!"
+    narrator "Decias caminando rapido, esperando a que lo que dijiste se haga realidad."
+    narrator "De repente, ves como tu amiga se va acercando hacia ti, solo que..."
+    narrator "¿Venia con alguien mas...?"
+    narrator "Decidiste acercarte con algo de timidez"
+    show catalina feliz at entrada_lenta_izquierda
+    show felipe feliz at entrada_lenta_derecha
+    a "Emh... Ejem."
+    narrator "...No sabes si saludar solo a tu amiga o ambos."
     menu DIA2_DEC1:
 
         set menuset
@@ -634,81 +676,101 @@ label wow_pero_despues_de_la_hiper_decision:
             $  Cha = Cha - 1
             jump DIA2_DES2_C
         "Saludas a ambos":
-            a "¡Hola cata! Y hola a ti también"
+            a "¡Hola cata! ...Y hola a ti también."
             c "¡Hola [Jugador]! ¿Como te fue ayer?"
-            a "Bastante bien, la verdad hable con el jefe de carrera y el tutor ¿Y a ti como te fue?"
-            c "A mi me fue bastante bien, además de que entendí casi todo lo que vi ayer"
-            n "Hola amigo ¿Cual es tu nombre? Para saber como llamarte"
-            $  Cha = Cha + 1
+            if dormir == 1:
+                a "Oh... Pues, Digamos que... No fui a la universidad ayer."
+                c "Oh! Entiendo, Jeje!"
+                a "Pero bueno... ¿Y a ti como te fue?"
+                c "Pues a mi me fue bastante bien! Además de que entendí casi todo lo que vi ayer."
+                narrator "Miraste hacia el desconcido, como si quieresas iniciar una conversacion con el indirectamente."
+                n "Ejem, Hola amigo! ¿Cual es tu nombre? Para saber como llamarte."
+                $  Cha = Cha + 1
+            else:
+                a "Bastante bien, la verdad hable con el jefe de carrera y el tutor ¿Y a ti como te fue?"
+                c "A mi me fue bastante bien, además de que entendí casi todo lo que vi ayer."
+                narrator "Miraste hacia el desconcido, como si quieresas iniciar una conversacion con el indirectamente."
+                n "Ejem, Hola amigo! ¿Cual es tu nombre? Para saber como llamarte."
+                $  Cha = Cha + 1
 label nombre:
-    show catalina feliz at mitad_izquierda
-    show felipe feliz at mitad_centro
     menu HOLAA:
         set menuset
-        narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos"
+        narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos."
 
         "Le digo mi nombre":
             a "Ah, soy [Jugador], un gusto"
             $ Cha = Cha + 1
             $ Flag1 = Flag1 +1
         "No le digo mi nombre":
-            a "Que te importa"
-            show felipe incomodo at mitad_centro
+            a "La verdad es que no veo porque te deberia importar."
+            show felipe incomodo 
+            show catalina neutral
+            narrator "Felipe y Catamaran se quedaron viendose. Se notaban algo incomodos."
             $ Cha = Cha -1
             jump DIA2_DES2_C
 label DIA2_DES1:
-    show catalina feliz at mitad_izquierda
-    show felipe feliz at mitad_centro
     menu DIA2_DEC2:
         set menuset
-        n "Yo me llamo Felipe ¡Te ves super buena onda!, asi de pasada ha sido un gusto conocerte"
+        n "Yo me llamo Felipe ¡Te ves super buena onda!, asi de pasada ha sido un gusto conocerte."
         "Le dices que ha sido un gusto conocerlo también y le das la mano":
-            f "¿Y que planes tienen para hoy?"
+            narrator "Tu y felipe se dieron un buen apreton de manos."
+            narrator "...Su mano estaba fria."
+            f "Jeje. ¿Y que planes tienen para hoy?"
             $ Voley = Voley + 1
             $ Cha = Cha + 1
             jump DIA2_DES2
         "Le dices que ok de manera insegura y no le das la mano":
+            f "...Erm ...Y que planes tienen para hoy?"
             $ Cha = Cha - 1
         "Le dices que es un gusto pero no le das la mano":
+            f "Y bueno... ¿Que planes tienen para hoy?"
             $ Cha = Cha + 1
 
 label DIA2_DES2_C:
-    show catalina feliz at mitad_izquierda
-    show felipe feliz at mitad_centro
     if Flag1 == 1:
         jump DIA2_DES2
-    narrator "Esto lleva a que Cata haga una pregunta"
-    c "¿Y que planes tienen para hoy?"
+    c "...Bueno, Eh... ¿Que planes tienen para hoy?"
+    show catalina feliz
+    show felipe neutral 
 label DIA2_DES2:
-    show catalina feliz at mitad_izquierda
-    show felipe feliz at mitad_centro
     menu DIA2_DEC3:
 
         set menuset
-        "En respuesta a la pregunta de que planes hay"
+        "Huh... Que deberia decir?"
 
         "La verdad es que no tengo nada en mente de momento":
             c "Oh, eso es normal, con todas las vueltas en la U en estos pocos días"
         "La verdad es que planeo estudiar un poco más rato":
             c "Suena buena idea, siempre es bueno repasar y estudiar un poco para estar seguros en cualquier situación"
         "La verdad es que planeo estudiar toda la tarde llegando a mi casa":
-            c "No deberías sobresaturarte mucho estudiando, te puede hacer mal"
+            c "No deberías sobresaturarte mucho estudiando, te puede hacer mal!"
 label DIA2_DES3:
-    narrator "Durante la conversación llegan los tres a la universidad y se separan llendo cada uno a sus clases"
+    narrator "Los tres seguimos conversando, hasta llegar a la universidad."
+    play sound "SFX_Pasos.mp3" noloop
     scene bg entrada_ula
-    show catalina feliz at mitad_izquierda
-    show felipe feliz at mitad_centro
-    a "Bueno ¡Nos vemos más tarde! O quizás en un rato más, quien sabe"
-    c "Si, nos vamos rápido porque ya estamos algo tarde"
+    show catalina feliz at mitad_mitad_izquierda
+    show felipe feliz at mitad_mitad_derecha
+    a "Bueno ¡Nos vemos más tarde! O quizás en un rato más, quien sabe."
+    c "Si, nos vamos rápido porque ya estamos algo tarde."
     f "¡Eso! ¡Adiós!"
-    hide catalina feliz
-    hide felipe feliz 
-    scene bg clase
+    hide catalina feliz with dissolve
+    hide felipe feliz with dissolve
+    play sound "SFX_Pasos.mp3" noloop
+    scene bg clase with dissolve
     narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte."
-    narrator "Cuando lo encuentras te sientas y esperas que llegue el profesor."
-    narrator "El profesor llega a la clase dando un anuncio"
+    narrator "Rapidamente te sientas y esperas que llegue el profesor."
+    if Voley == 1:
+                narrator "Viendo como se demora un poco, sacaste tu celular, viendo todas las notificaciones."
+                narrator "Notando como alguien llamado 'Xx_Felipe_Kawaii_xX' en instagram te envio solicitud de amistad."
+                a "Huh..."
+    narrator "De la nada, el profesor entro a la sala de clases."
     show profe feliz at fuera_izquierda_al_centro
-    p "Bueno chicos y chicas, lo que sigue ahora es nuestro proyecto semestral grupal, asi que espero que puedan hacer todos grupos"
+    p "Bueno chicos y chicas, ¿Recuerdan que dije que ibamos a hacer un parcial el dia de hoy?"
+    show profe neutral
+    p "Resulta que... Todo el departamento de [Carrera] habia hablado que este parcial iba a ser una nota grupal..."
+    show profe feliz
+    p "¡Asi que! Reunanse en grupos para hacer la actividad por favor."
+    narrator "Decia el profesor, mientras se iba a sentar en su mesa para corregir unas pruebas de otra seccion."
     hide profe feliz with dissolve
     menu DIA2_DEC4:
         
@@ -724,7 +786,7 @@ label DIA2_DES3:
         "Esperas a ver si alguno de tus compañeros te pregunta":
             narrator "Se te acerca un compañero"
             n "Oye, vi que estas solo ¿Te falta grupo? De ser asi puedes ser con nosotros"
-            a "Oh gracias, de echo si me faltaba un grupo para trabajar"
+            a "Oh gracias, de hecho si me faltaba un grupo para trabajar"
             $ Cha = Cha - 1
             $ Intro = Intro + 1
             jump DIA2_DES4
@@ -732,23 +794,29 @@ label DIA2_DES3:
             $ Cha = Cha - 2
             $ Intro = Intro + 2
 label DIA2_PROF:
-    show profe neutral at mitad_izquierda
+    narrator "El profesor se te quedo viendo, llendo hacia donde estabas."
+    show profe neutral at fuera_izquierda_al_centro
     menu DIA2_DEC5_PROF:
 
         set menuset
         p "Veo que sigue sin equipo ¿Planea hacer el trabajo sin compañeros?"
 
         "Le dices que no encontraste grupo":
-            a "Si profesor, es que no logre encontrar un grupo al que le faltara persona"
-            hide profe neutral
-            show profe incomodo at mitad_izquierda
-            p "Esta bien"
-        "Le dices que quisiste hacerlo sin nadie mas":
-            a "Si profesor, me gusta más trabajar individualmente"
-            hide profe neutral
-            show profe feliz at mitad_izquierda
-            p "Esta bien"
-    narrator "La clase termina"
+            a "Si profesor, es que no logre encontrar un grupo al que le faltara persona."
+            show profe incomodo
+            p "...Esta bien."
+            hide profe feliz with dissolve
+            narrator "Luego de preguntarme, el profesor volvio a sentarse para volver a corregir pruebas."
+            narrator "Aunque el profesor no se veia muy satrisfecho con mi respuesta..."
+            narrator "...Considerando que habian muchos grupos que les faltaban personas, pero bueno."
+
+        "Le dices que preferias hacerlo de manera individual":
+            a "Si profesor, me gusta más trabajar individualmente que en grupo, me entiende?"
+            show profe feliz
+            p "Oh! Esta bien."
+            hide profe feliz with dissolve
+            narrator "Luego de preguntarme, el profesor volvio a sentarse para volver a corregir pruebas."
+    narrator "Despues de realizar el trabajo, la clase termino."
     scene bg pasillo_3b
 label saltito:
     if Voley == 1:
