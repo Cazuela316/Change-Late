@@ -24,15 +24,28 @@ define gui.show_name = True
 
 ## Versión del juego.
 
-define config.version = "0.01"
+define config.version = "1.50"
 
 
 ## Texto situado en la pantalla 'Acerca de' del juego. Sitúa el texto entre
 ## comillas triples y deja una línea en blanco entre párrafos.
 
 define gui.about = _p("""\
-Estoy testeando cosas asi que breik.
-JADFKJLAFKJLAFSKJLAFDKJLAFKJLAFKJLFNVNVNJV.""")
+
+Nombre del juego:
+Change/Late
+Género:
+Vida cotidiana
+Sinopsis:
+La historia narra el viaje de un estudiante nuevo de universidad a traves de dos dias de clases, donde debera relacionarse con gente y resolver problemas.
+Equipo de desarrollo:
+Arte: emikologcitolitoenunpancito y
+Guion: cazusuperlol y Tiare O.
+Programadores: cazusuperlol y emikologcitolitoenunpancito
+Control de calidad: @pkuyako
+
+
+Todos los derechos van a sus respectivos autores.""")
 
 
 ## Nombre breve del juego para ejecutables y directorios en la distribución.
@@ -50,6 +63,8 @@ define build.name = "Change_Late"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
+
+
 
 
 ## Para permitir al usuario probar el volumen de los canales de sonido o voz,
@@ -162,43 +177,43 @@ define config.window_icon = "gui/window_icon.png"
 
 init python:
 
-    ## Las funciones siguientes toman patrones de archivos. No son relevantes
-    ## las mayúsculas o minúsculas. Son relativos al directorio base, con o sin
-    ## una / inicial. Si corresponden más de un patrón, se usa el primero.
-    ##
-    ## En un patrón:
-    ##
-    ## / es el separador de directorios.
-    ##
-    ## * corresponde a todos los carácteres, excepto el separador de
-    ##   directorios.
-    ##
-    ## ** corresponde a todos los carácteres, incluynedo el separador de
-    ##    directorios.
-    ##
-    ## Por ejemplo, "*.txt" corresponde a los archivos .txt en el directorio
-    ## de base, "game/**.ogg" corresponde a los archivos .ogg del directorio
-    ## 'game' y sus subdirectorios y "**.psd" corresponde a los archivos .psd en
-    ## cualquier parte del proyecto.
+        ## Las funciones siguientes toman patrones de archivos. No son relevantes
+        ## las mayúsculas o minúsculas. Son relativos al directorio base, con o sin
+        ## una / inicial. Si corresponden más de un patrón, se usa el primero.
+        ##
+        ## En un patrón:
+        ##
+        ## / es el separador de directorios.
+        ##
+        ## * corresponde a todos los carácteres, excepto el separador de
+        ##   directorios.
+        ##
+        ## ** corresponde a todos los carácteres, incluynedo el separador de
+        ##    directorios.
+        ##
+        ## Por ejemplo, "*.txt" corresponde a los archivos .txt en el directorio
+        ## de base, "game/**.ogg" corresponde a los archivos .ogg del directorio
+        ## 'game' y sus subdirectorios y "**.psd" corresponde a los archivos .psd en
+        ## cualquier parte del proyecto.
 
-    ## Clasifica archivos como 'None' para excluirlos de la distribución.
+        ## Clasifica archivos como 'None' para excluirlos de la distribución.
 
-    build.classify('**~', None)
-    build.classify('**.bak', None)
-    build.classify('**/.**', None)
-    build.classify('**/#**', None)
-    build.classify('**/thumbs.db', None)
+        build.classify('**~', None)
+        build.classify('**.bak', None)
+        build.classify('**/.**', None)
+        build.classify('**/#**', None)
+        build.classify('**/thumbs.db', None)
 
-    ## Para archivar, se clasifican como 'archive'.
+        ## Para archivar, se clasifican como 'archive'.
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+        # build.classify('game/**.png', 'archive')
+        # build.classify('game/**.jpg', 'archive')
 
-    ## Los archivos que corresponden a patrones de documentation se duplican en
-    ## la distribución de mac; aparecerán en los archivos app y zip.
+        ## Los archivos que corresponden a patrones de documentation se duplican en
+        ## la distribución de mac; aparecerán en los archivos app y zip.
 
-    build.documentation('*.html')
-    build.documentation('*.txt')
+        build.documentation('*.html')
+        build.documentation('*.txt')
 
 
 ## Se necesita una clave de licencia de Google Play para realizar compras dentro

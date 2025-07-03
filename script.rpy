@@ -35,7 +35,7 @@ image bg negro = "#000000"
 image bg cielo = "image.png"
 image cuadrado = "color2.png"
 transform amongus:
-    xzoom 1.5 yzoom 0.5
+    xzoom 1.7 yzoom 0.5
     xalign 0.5
     yalign 0.5
 transform mitad_derecha:
