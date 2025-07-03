@@ -531,11 +531,12 @@ label wow_pero_despues_7:
     narrator "Despues de una larga caminata, llegaste a tu casa."
     show bg pieza_noche with dissolve #aun no existe este sprite lol
     narrator "Aunque ahora tenias que decidir..."
+    if wow == 1:
+        jump wow_pero_despues
+    else:
+        jump wow_pero_despues
 
 label ruta_extra_1:
-        if wow == 1:
-            jump wow_pero_despues
-        else:
             p "Entiendo, Bueno. No tengo nada mas que decirte mas que estudies harto para que te vaya bien en esta prueba."
             show profe feliz
             p "¿Vale? Aun puedes remontar."
@@ -560,19 +561,19 @@ label ruta_extra_1:
             a "Oh! Buenas. Me llamo [Jugador]."
             t "Mh, Ya veo..."
             t "Bueno, cuentame..."
-        menu decision_EX1:
+            menu decision_EX1:
 
-            set menuset
-            t "¿Como les va a los de primer año?"
+                set menuset
+                t "¿De donde eres?"
 
-            "De aquí":
-                a "Pues de aqui, Por que la pregunta?"
-                t "No, por nada. Solo curiosidad."
+                "De aquí":
+                    a "Pues de aqui, Por que la pregunta?"
+                    t "No, por nada. Solo curiosidad."
 
-            "De otra parte":
-                $ act_l = 1
-                a "De otra parte, Por qué pregunta?"
-                t "Mh! Ya veo. Es solo para conocerte mejor."
+                "De otra parte":
+                    $ act_l = 1
+                    a "De otra parte, Por qué pregunta?"
+                    t "Mh! Ya veo. Es solo para conocerte mejor."
 label wow_pero_despues_EX1: 
         menu decision_EX2:
 
@@ -938,7 +939,7 @@ label DIA2_DES5:
                 hide juan feliz with dissolve
                 narrator "Luego de eso, el jefe de carrera se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
         "Si, tengo muy claras mis metas para ahora y el futuro":
-            act_m=act_m+1;
+            $ act_m = act_m+1
             if Ruta_tutor == 1:
                 t "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho."
                 a "Claro! Ya se lo que quiero!"
@@ -1079,6 +1080,7 @@ label fin:
     show catalina feliz
     c "Pero hechandole ganas, podras lograr cualquier cosa!"
     c "Bien, Nos vemos y gracias por jugar!"
+    hide catalina feliz with dissolve
     show bg negro with dissolve
     centered "{color=#ffffff}Final Bueno! Lograste que catamaran te diera tus resultados!"
 
