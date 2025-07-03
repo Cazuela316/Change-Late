@@ -483,7 +483,7 @@ label wow_pero_despues_55:
             j "Oh! No, por nada."
 
         "De otra parte":
-            $ act_m = 1
+            $ act_l = 1
             a "De otra parte, Por qué pregunta?"
             j "Oh, por nada."
 label wow_pero_despues_6: 
@@ -570,7 +570,7 @@ label ruta_extra_1:
                 t "No, por nada. Solo curiosidad."
 
             "De otra parte":
-                $ act_m = 1
+                $ act_l = 1
                 a "De otra parte, Por qué pregunta?"
                 t "Mh! Ya veo. Es solo para conocerte mejor."
 label wow_pero_despues_EX1: 
@@ -938,6 +938,7 @@ label DIA2_DES5:
                 hide juan feliz with dissolve
                 narrator "Luego de eso, el jefe de carrera se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
         "Si, tengo muy claras mis metas para ahora y el futuro":
+            act_m=act_m+1;
             if Ruta_tutor == 1:
                 t "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho."
                 a "Claro! Ya se lo que quiero!"
