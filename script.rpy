@@ -227,9 +227,9 @@ menu primera_decision:
 
     "No":
         $ Res = Res + 1
-        a "Urm… No! Tengo que ir a clase, Ademas es la hora perfecta para ir!"
+        a "Urm… No! Tengo que ir a clase, Además es la hora perfecta para ir!"
         stop music fadeout 1.0
-        narrator "Dijiste, levantándote con todo el animo que podias, vistiéndote..."
+        narrator "Dijiste, levantándote con todo el animo que podías, vistiéndote..."
         narrator "Lavándote los dientes y finalmente, saliendo de tu casa, sin antes dejar bien cerrado."
         play sound "SFX_Salir.mp3" noloop
         scene bg camino
@@ -248,7 +248,7 @@ menu primera_decision:
         c "Bueno... Cuéntame. ¿Cómo estuvo tu fin de semana?"
         menu segunda_decision:
             set menuset
-            "Como deberia responderle?"
+            "Como debería responderle?"
 
             "De muy buena manera":
                 $ Cha = Cha + 2
@@ -396,7 +396,7 @@ label wow_pero_despues_3:
         "En el pasillo":
             play sound "SFX_Pasos.mp3" noloop
             scene bg pasillo_2
-            a "Ahi esta! Aunque esta con alguien..."
+            a "Ahí esta! Aunque esta con alguien..."
 
         "En el gimnasio":
             play sound "SFX_Pasos.mp3" noloop
@@ -432,7 +432,7 @@ menu quinta_desicion:
             "Aunque... El jefe de carrera se percato que lo quede viendo, y junto con la otra persona, vinieron hacia donde estaba."
             show juan neutral at entrada_lenta_derecha
             show kevin neutral at entrada_lenta_izquierda
-            j "Vi que te quedaste viendonos... Querias hablar con alguno de nosotros?"
+            j "Vi que te quedaste viendonos... Querías hablar con alguno de nosotros?"
             a "A...ah! Sip, vera..."
             
 label wow_pero_despues_5:
@@ -442,7 +442,7 @@ label wow_pero_despues_5:
     t "Oh, No no… El jefe de carrera es todo tuyo. Aunque también me gustaría hablarte después."
     show kevin feliz at salida_izquierda_lenta
     narrator "Dijo el tutor mientras se iba un poco al lado para no estorbar entre la conversación."
-    narrator "poniéndose sus audífonos y viendo su telefono."
+    narrator "Poniéndose sus audífonos y viendo su teléfono."
     show juan feliz at derecha_al_centro
     menu quintaa_desicion:
 
@@ -481,8 +481,8 @@ label wow_pero_despues_55:
         set menuset
         j "De donde eres?"
 
-        "De aqui":
-            a "Pues de aqui, Por que la pregunta?"
+        "De aquí":
+            a "Pues de aquí, Por que la pregunta?"
             j "Oh! No, por nada."
 
         "De otra parte":
@@ -490,8 +490,8 @@ label wow_pero_despues_55:
             a "De otra parte, Por qué pregunta?"
             j "Oh, por nada."
 label wow_pero_despues_6: 
-    narrator "De la nada a juan le llego un mensaje a su teléfono, se sorpendio un poco y lo guardo rapidamente."
-    j "Uy... me tengo que ir. Nos vemos despúes!"
+    narrator "De la nada a juan le llego un mensaje a su teléfono, se sorprendió un poco y lo guardo rapidamente."
+    j "Uy... me tengo que ir. Nos vemos después!"
     a "Oh! Está bien, nos vemos!"
     show juan feliz at salida_izquierda_rapida
     narrator "Después de hablar con el jefe de carrera, me gire hacia donde estaba el tutor, aun viendo su celular con sus audífonos puestos."
@@ -514,7 +514,7 @@ label wow_pero_despues_6:
             t "No te preocupes. A todos les cuesta un poco."
             a "Vale! Muchas gracias."
         "Aguantando como puedes":
-            a "Pues he estado aguantándo como puedo."
+            a "Pues he estado aguantando como puedo."
             t "Claro, entiendo. Bueno, Ahí te hablare para coordinar mejor ese tema. ¿Vale?"
             a "Vale! Muchas gracias."
         "Decirle porque vienes a hablarle":
@@ -557,7 +557,7 @@ label ruta_extra_1:
             narrator "…Hasta que un extraño chico se te posiciono al lado tuyo mientras caminas hacia tu casa."
             show kevin neutral at fuera_izquierda_al_centro
             n "Hola. ¿Cómo estás? Eres de primer año en la carrera [Carrera], ¿No?"
-            narrator "Miraste al chico algo extrañado… ¿Quien inicia una conversación así? Aunque aún así le respondiste sin pensarlo mucho."
+            narrator "Miraste al chico algo extrañado… ¿Quién inicia una conversación así? Aunque aún así le respondiste sin pensarlo mucho."
             a "Uh… ¿Si? Como lo sabes?"
             show kevin feliz
             n "Jeje! Me presento. Me llamo Kevinazo, soy el tutor de matemáticas."
@@ -615,7 +615,6 @@ label wow_pero_despues_EX2:
                 a "Bueno… La verdad es que no me ha ido tan bien… Pero puedo remontarla!"
                 t "Ya veo, mientras estudies y comprendas los contenidos, Estas para el 7!"
                 a "Vale, Estudiare mucho hoy entonces!"
-                narrator "Así que si más, Te pusiste tus audífonos y empezaste a caminar hacia tu casa."
 label wow_pero_despues_EX3: 
                 narrator "Derrepente, Kevinazo se quedo parado."
                 show kevin neutral
@@ -632,7 +631,7 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
     menu ya_no_se_que_decision_es_esta:
 
         set menuset
-        "¿Que deberia hacer?"
+        "¿Que debería hacer?"
 
         "Dormir sin más":
             a "Fuh.. Que cansancio... Mejor me voy a dormir…"
