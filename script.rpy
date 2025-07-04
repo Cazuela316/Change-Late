@@ -635,17 +635,17 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
             a "Fuh.. Que cansancio... Mejor me voy a dormir…"
             stop music fadeout 1.5
             show bg negro with dissolve
-            narrator "Y sin más, Te acostaste, tus ojos se cerraron por si solos."
+            narrator "Y sin más, te acostaste, tus ojos se cerraron por sí solos."
         "Estudiar un poco antes de dormir":
             a "Yo creo que es buena idea estudiar un poco antes de dormir, después de todo tengo un parcial mañana…"
-            narrator "Y sin más, Te dispusiste a estudiar antes de irte a dormir."
+            narrator "Y sin más, te dispusiste a estudiar antes de irte a dormir."
             narrator "Te dormiste un poco más tarde, pero ya estabas para el parcial de mañana."
-            narrator "Ya una vez en tu cama, tus ojos se cerraron por si solos."
+            narrator "Ya una vez en tu cama, tus ojos se cerraron por sí solos."
             stop music fadeout 1.5
             show bg negro with dissolve
         "No dormir":
-            a "Es muy temprano como para dormir! Tengo que aprovechar todo el tiempo que tengo!"
-            narrator "Así que, empezaste a hacer todo lo posible, estudiar, repasar, Hasta ordenaste tu pieza."
+            a "¡Es muy temprano como para dormir! ¡Tengo que aprovechar todo el tiempo que tengo!"
+            narrator "Así que, empezaste a hacer todo lo posible, estudiar, repasar. Hasta ordenaste tu pieza."
             narrator "Caíste a tu cama totalmente exhausto, durmiéndote casi instantáneamente."
             stop music fadeout 2.0
             show bg negro with dissolve
@@ -656,153 +656,153 @@ label wow_pero_despues: #Escribe despues de este cuando ya tengas todo el primer
 
             
 label wow_pero_despues_de_la_hiper_decision: 
-    narrator "Despues de una buena dormida..."
-    narrator "...Despiertas con las energias totalmente renovadas."
+    narrator "Después de una buena dormida..."
+    narrator "...Despiertas con las energías totalmente renovadas."
     show bg pieza_dia with dissolve
     play music "Pajaritos.mp3" fadein 2.0 loop
-    a "Waah, otro día más de universidad, me pregunto ¿Que hora será?"
-    narrator "Te estiras para agarrar tu celular y ver la hora, el cual muestra las 7:30 de la mañana"
-    a "Que buena hora para despertar e ir a la universidad!"
-    narrator "Dijiste, levantándote con todo el animo con mucha energia, vistiendote..."
-    narrator "Lavándote los dientes y finalmente, saliendo de tu casa, sin antes dejar bien cerrado."
+    a "Waah, otro día más de universidad, me pregunto, ¿que hora será?"
+    narrator "Te estiras para agarrar tu celular y ver la hora, el cual muestra las 7:30 de la mañana."
+    a "¡Que buena hora para despertar e ir a la universidad!"
+    narrator "Dijiste, levantándote con todo el ánimo con mucha energía, vistiéndote..."
+    narrator "Lavándote los dientes y, finalmente, saliendo de tu casa, sin antes dejar bien cerrado."
     play sound "SFX_Salir.mp3" noloop
     scene bg camino
     play music "BMG_Dia.mp3" fadein 4.0 loop
-    a "Huh, veamos si me pillo a Catamaran de camino!"
-    narrator "Decias caminando rapido, esperando a que lo que dijiste se haga realidad."
+    a "Huh, ¡veamos si me pillo a Catamaran de camino!"
+    narrator "Decías caminando rápido, esperando a que lo que dijiste se haga realidad."
     narrator "De repente, ves como tu amiga se va acercando hacia ti, solo que..."
-    narrator "¿Venia con alguien mas...?"
-    narrator "Decidiste acercarte con algo de timidez"
+    narrator "¿Venía con alguien mas...?"
+    narrator "Decidiste acercarte con algo de timidez."
     show catalina feliz at entrada_lenta_izquierda
     show felipe feliz at entrada_lenta_derecha
     a "Emh... Ejem."
-    narrator "...No sabes si saludar solo a tu amiga o ambos."
+    narrator "...No sabes si saludar solo a tu amiga o a ambos."
     menu DIA2_DEC1:
 
         set menuset
-        "¿A quien saludo?"
+        "¿A quién saludo?"
 
         "Saludas solo a tu amiga":
-            a "¡Ah! Hola cata ¿Como estuviste ayer? al final no te perdiste ¿O si?"
-            c "¡No, no me perdi!, y creo que me fue bastante bien ayer, además de que entendí todo"
-            a "Ah… eso es bueno, me alegro por ti"
+            a "¡Ah! Hola Cata ¿cómo estuviste ayer? Al final no te perdiste, ¿o sí?"
+            c "¡No, no me perdí!, y creo que me fue bastante bien ayer, además de que entendí todo."
+            a "Ah… eso es bueno, me alegro por ti."
             show felipe neutral
             $  Cha = Cha - 1
             jump DIA2_DES2_C
         "Saludas a ambos":
-            a "¡Hola cata! ...Y hola a ti también."
-            c "¡Hola [Jugador]! ¿Como te fue ayer?"
+            a "¡Hola Cata! ...Y hola a ti también."
+            c "¡Hola, [Jugador]! ¿Cómo te fue ayer?"
             if dormir == 1:
-                a "Oh... Pues, Digamos que... No fui a la universidad ayer."
-                c "Oh! Entiendo, Jeje!"
-                a "Pero bueno... ¿Y a ti como te fue?"
-                c "Pues a mi me fue bastante bien! Además de que entendí casi todo lo que vi ayer."
-                narrator "Miraste hacia el desconcido, como si quieresas iniciar una conversacion con el indirectamente."
-                n "Ejem, Hola amigo! ¿Cual es tu nombre? Para saber como llamarte."
+                a "Oh... Pues, digamos que... No fui a la universidad ayer."
+                c "¡Oh! ¡Entiendo, Jeje!"
+                a "Pero bueno... ¿Y a ti cómo te fue?"
+                c "¡Pues a mí me fue bastante bien! Además de que entendí casi todo lo que vi ayer."
+                narrator "Miraste hacia el desconcido, como si quisieras iniciar una conversación con él indirectamente."
+                n "Ejem, ¡Hola amigo! ¿Cuál es tu nombre? Para saber cómo llamarte."
                 $  Cha = Cha + 1
             else:
-                a "Bastante bien, la verdad hable con el jefe de carrera y el tutor ¿Y a ti como te fue?"
-                c "A mi me fue bastante bien, además de que entendí casi todo lo que vi ayer."
-                narrator "Miraste hacia el desconcido, como si quieresas iniciar una conversacion con el indirectamente."
-                n "Ejem, Hola amigo! ¿Cual es tu nombre? Para saber como llamarte."
+                a "Bastante bien, la verdad. Hablé con el jefe de carrera y el tutor. ¿Y a ti cómo te fue?"
+                c "A mí me fue bastante bien, además de que entendí casi todo lo que vi ayer."
+                narrator "Miraste hacia el desconcido, como si quisieras iniciar una conversacion con él indirectamente."
+                n "Ejem, ¡Hola amigo! ¿Cuál es tu nombre? Para saber cómo llamarte."
                 $  Cha = Cha + 1
 label nombre:
     menu HOLAA:
         set menuset
-        narrator "No estas seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos."
+        narrator "No estás seguro de querer decirle tu nombre a alguien que no conoces, pero también podría servir para hacer amigos."
 
         "Le digo mi nombre":
-            a "Ah, soy [Jugador], un gusto"
+            a "Ah, soy [Jugador], un gusto."
             $ Cha = Cha + 1
             $ Flag1 = Flag1 +1
         "No le digo mi nombre":
-            a "La verdad es que no veo porque te deberia importar."
+            a "La verdad es que no veo por qué te debería importar."
             show felipe incomodo 
             show catalina neutral
-            narrator "Felipe y Catamaran se quedaron viendose. Se notaban algo incomodos."
+            narrator "Felipe y Catamaran se quedaron viéndose. Se notaban algo incómodos."
             $ Cha = Cha -1
             jump DIA2_DES2_C
 label DIA2_DES1:
-    n "Yo me llamo Felipe ¡Te ves super buena onda!, asi de pasada ha sido un gusto conocerte."
-    narrator "Decia felipe, mientras extendia su mano."
+    n "Yo me llamo Felipe. ¡Te ves super buena onda! Asi de pasada ha sido un gusto conocerte."
+    narrator "Decia Felipe, mientras extendía su mano."
     menu DIA2_DEC2:
         set menuset
-        narrator "Aun estas algo inseguro de darle la mano... ¿Que deberia hacer?"
+        narrator "Aun estás algo inseguro de darle la mano... ¿Qué debería hacer?"
         "Le dices que ha sido un gusto conocerlo también y le das la mano":
-            narrator "Tu y felipe se dieron un buen apreton de manos."
-            narrator "...Su mano estaba fria."
-            f "Jeje. ¿Y que planes tienen para hoy?"
+            narrator "Tú y Felipe se dieron un buen apretón de manos."
+            narrator "...Su mano estaba fría."
+            f "Jeje. ¿Y qué planes tienen para hoy?"
             $ Voley = Voley + 1
             $ Cha = Cha + 1
             jump DIA2_DES2
         "Le dices que ok de manera insegura y no le das la mano":
-            f "...Erm ...Y que planes tienen para hoy?"
+            f "...Erm ...Y qué planes tienen para hoy?"
             $ Cha = Cha - 1
-        "Le dices que es un gusto pero no le das la mano":
-            f "Y bueno... ¿Que planes tienen para hoy?"
+        "Le dices que es un gusto, pero no le das la mano":
+            f "Y bueno... ¿Qué planes tienen para hoy?"
             $ Cha = Cha + 1
 
 label DIA2_DES2_C:
     if Flag1 == 1:
         jump DIA2_DES2
-    c "...Bueno, Eh... ¿Que planes tienen para hoy?"
+    c "...Bueno, Eh... ¿Qué planes tienen para hoy?"
     show catalina feliz
     show felipe neutral 
 label DIA2_DES2:
     menu DIA2_DEC3:
 
         set menuset
-        "Huh... Que deberia decir?"
+        "Huh... ¿Qué deberia decir?"
 
         "La verdad es que no tengo nada en mente de momento":
-            c "Oh, eso es normal, con todas las vueltas en la U en estos pocos días"
+            c "Oh, eso es normal, con todas las vueltas en la U en estos pocos días."
         "La verdad es que planeo estudiar un poco más rato":
-            c "Suena buena idea, siempre es bueno repasar y estudiar un poco para estar seguros en cualquier situación"
+            c "Suena buena idea, siempre es bueno repasar y estudiar un poco para estar seguros en cualquier situación."
         "La verdad es que planeo estudiar toda la tarde llegando a mi casa":
-            c "No deberías sobresaturarte mucho estudiando, te puede hacer mal!"
+            c "No deberías sobresaturarte mucho estudiando, ¡te puede hacer mal!"
 label DIA2_DES3:
     narrator "Los tres seguimos conversando, hasta llegar a la universidad."
     play sound "SFX_Pasos.mp3" noloop
     scene bg entrada_ula
     show catalina feliz at mitad_mitad_izquierda
     show felipe feliz at mitad_mitad_derecha
-    a "Bueno ¡Nos vemos más tarde! O quizás en un rato más, quien sabe."
-    c "Si, nos vamos rápido porque ya estamos algo tarde."
+    a "Bueno, ¡nos vemos más tarde! O quizás en un rato más, quién sabe."
+    c "Sí, nos vamos rápido porque ya estamos algo tarde."
     f "¡Eso! ¡Adiós!"
     hide catalina feliz with dissolve
     hide felipe feliz with dissolve
     play sound "SFX_Pasos.mp3" noloop
     scene bg clase with dissolve
-    narrator "Entras a la sala que te corresponde y buscas un asiento vacio para poder sentarte."
+    narrator "Entras a la sala que te corresponde y buscas un asiento vacío para poder sentarte."
     narrator "Rapidamente te sientas y esperas que llegue el profesor."
     if Voley == 1:
-                narrator "Viendo como se demora un poco, sacaste tu celular, viendo todas las notificaciones."
-                narrator "Notando como alguien llamado 'Xx_Felipe_Kawaii_xX' en instagram te envio solicitud de amistad."
+                narrator "Viendo cómo se demora un poco, sacaste tu celular, viendo todas las notificaciones."
+                narrator "Notando como alguien llamado 'Xx_Felipe_Kawaii_xX' en Instagram te envió solicitud de amistad."
                 a "Huh..."
-    narrator "De la nada, el profesor entro a la sala de clases."
+    narrator "De la nada, el profesor entró a la sala de clases."
     show profe feliz at fuera_izquierda_al_centro
-    p "Bueno chicos y chicas, ¿Recuerdan que dije que ibamos a hacer un parcial el dia de hoy?"
+    p "Bueno chicos y chicas, ¿recuerdan que dije que íbamos a hacer un parcial el día de hoy?"
     show profe neutral
-    p "Resulta que... Todo el departamento de [Carrera] habia hablado que este parcial iba a ser una nota grupal..."
+    p "Resulta que... Todo el departamento de [Carrera] había hablado de que este parcial iba a ser una nota grupal..."
     show profe feliz
-    p "¡Asi que! Reunanse en grupos para hacer la actividad por favor."
-    narrator "Decia el profesor, mientras se iba a sentar en su mesa para corregir unas pruebas de otra seccion."
+    p "¡Así que! Reúnanse en grupos para hacer la actividad por favor."
+    narrator "Decía el profesor, mientras se iba a sentar en su mesa para corregir unas pruebas de otra sección."
     hide profe feliz with dissolve
     menu DIA2_DEC4:
         
         set menuset
-        "¿Que haces?"
+        "¿Qué haces?"
 
         "Decides ir y preguntarle a algunos de tus compañeros si quieren hacer grupo contigo":
             narrator "Miraste hacia los lados, viendo como a muchas personas les faltaba grupo."
-            narrator "Te paraste y decidiste ir hacia la persona que estaba mas cerca de ti."
+            narrator "Te paraste y decidiste ir hacia la persona que estaba más cerca de ti."
             a "¡Hola! ¿Quería saber si puedo hacer grupo con ustedes? Si no es molestia"
-            n "Oh, si puedes ser con nosotros!"
-            narrator "Decian mientras hacian un espacio para que te sentaras."
-            a "Oh! Perfecto!"
-            narrator "Decias mientras te sentabas, empezando a realizar el trabajo."
-            narrator "Despues de un rato, el tiempo se acabo y la clase termino."
-            narrator "Te preparaste para, finalmente irte."
+            n "Oh, ¡sí puedes ser con nosotros!"
+            narrator "Decían mientras hacían un espacio para que te sentaras."
+            a "¡Oh! ¡Perfecto!"
+            narrator "Decías mientras te sentabas, empezando a realizar el trabajo."
+            narrator "Después de un rato, el tiempo se acabó y la clase terminó."
+            narrator "Te preparaste para, finalmente, irte."
             play sound "SFX_Pasos.mp3" noloop
             stop music fadeout 2.0
             scene bg entrada_ula
@@ -817,13 +817,13 @@ label DIA2_DES3:
             $ Voley = Voley - 1
             jump DIA2_DES4
         "Esperas a ver si alguno de tus compañeros te pregunta":
-            narrator "Te quedaste viendo a la nada, esperando si es que alguien te venia..."
-            narrator "Cuando derrepente!"
-            n "Oye, vi que estas solo ¿Te falta grupo? De ser asi puedes ser con nosotros."
-            a "Oh gracias, de hecho si me faltaba un grupo para trabajar!"
-            n "Ah! Perfecto, entonces hagamoslo!"
-            narrator "Despues de un rato, el tiempo se acabo y la clase termino."
-            narrator "Te preparaste para, finalmente irte."
+            narrator "Te quedaste viendo a la nada, esperando si es que alguien te venía..."
+            narrator "¡Cuando de repente!"
+            n "Oye, vi que estás solo. ¿Te falta grupo? De ser así puedes ser con nosotros."
+            a "Oh, gracias, ¡de hecho sí me faltaba un grupo para trabajar!"
+            n "¡Ah! Perfecto, ¡entonces hagámoslo!"
+            narrator "Despues de un rato, el tiempo se acabó y la clase terminó."
+            narrator "Te preparaste para, finalmente, irte."
             play sound "SFX_Pasos.mp3" noloop
             stop music fadeout 3.0
             scene bg entrada_ula
@@ -841,77 +841,77 @@ label DIA2_DES3:
             $ Cha = Cha - 2
             $ Intro = Intro + 2
 label DIA2_PROF:
-    narrator "El profesor se te quedo viendo, llendo hacia donde estabas."
+    narrator "El profesor se te quedó viendo, yendo hacia donde estabas."
     show profe neutral at fuera_izquierda_al_centro
     menu DIA2_DEC5_PROF:
 
         set menuset
-        p "Veo que sigue sin equipo ¿Planea hacer el trabajo sin compañeros?"
+        p "Veo que sigue sin equipo, ¿Planea hacer el trabajo sin compañeros?"
 
-        "Le dices que no encontraste grupo":
-            a "Si profesor, es que no logre encontrar un grupo al que le faltara persona."
+        "Le dices que no encontraste grupo.":
+            a "Sí, profesor, es que no logré encontrar un grupo al que le faltaran persona."
             show profe incomodo
-            p "...Esta bien."
+            p "...Está bien."
             hide profe feliz with dissolve
-            narrator "Luego de preguntarme, el profesor volvio a sentarse para volver a corregir pruebas."
-            narrator "Aunque el profesor no se veia muy satrisfecho con mi respuesta..."
+            narrator "Luego de preguntarme, el profesor volvió a sentarse para volver a corregir pruebas."
+            narrator "Aunque el profesor no se veía muy satisfecho con mi respuesta..."
             narrator "...Considerando que habian muchos grupos que les faltaban personas, pero bueno."
 
-        "Le dices que preferias hacerlo de manera individual":
-            a "Si profesor, me gusta más trabajar individualmente que en grupo, me entiende?"
+        "Le dices que preferías hacerlo de manera individual":
+            a "Sí, profesor, me gusta más trabajar individualmente que en grupo, ¿me entiende?"
             show profe feliz
-            p "Oh! Esta bien."
+            p "¡Oh! Est'a bien."
             hide profe feliz with dissolve
-            narrator "Luego de preguntarme, el profesor volvio a sentarse para volver a corregir pruebas."
-    narrator "Despues de realizar el trabajo, la clase termino."
+            narrator "Luego de preguntarme, el profesor volvió a sentarse para volver a corregir pruebas."
+    narrator "Después de realizar el trabajo, la clase terminó."
     scene bg pasillo_3b
 label saltito:
     if Voley == 1:
         jump voley
 label DIA2_DES4:
     if Ruta_tutor != 1:
-        narrator "Justo te encuentras con el jefe de carrera de camino!"
+        narrator "¡Justo te encuentras con el jefe de carrera de camino!"
         show juan feliz at fuera_izquierda_al_centro
-        j "Hola [Jugador], como has estado desde ayer?"
+        j "Hola, [Jugador], ¿cómo has estado desde ayer?"
     else:
-        narrator "Justo te encuentras con el tutor de camino!"
+        narrator "¡Justo te encuentras con el tutor de camino!"
         show kevin feliz at fuera_izquierda_al_centro
-        t "Hola [Jugador], como has estado desde ayer?"
+        t "Hola, [Jugador], ¿cómo has estado desde ayer?"
     menu DIA2_DEC6:
 
         set menuset
         "Piensas un poco en tu día antes de responderle"
 
-        "Gracias por preguntar! He estado bien hoy":
+        "¡Gracias por preguntar! He estado bien hoy":
             $ Cha = Cha + 1
         "La verdad es que he estado normal desde ayer":
             $ Cha = Cha - 1
     if Ruta_tutor != 1:
-        j "Es bueno que no estes mal, y como te fue con el tutor ayer?"
+        j "Es bueno que no estés mal, ¿y como te fue con el tutor ayer?"
     else:
-        t "Es bueno que no estes mal, y como te fue con el jefe de carrera ayer?"
-    a "Ayer, hable con el, pero me dijo que me hablaría para organizar bien las fechas, asi que no he sabido nada."
+        t "Es bueno que no estés mal, ¿y como te fue con el jefe de carrera ayer?"
+    a "Ayer, hablé con él, pero me dijo que me hablaría para organizar bien las fechas, así que no he sabido nada."
     if Ruta_tutor != 1:
-        j "Las remediales a veces son dificiles, asi que te recomiendo prepararte desde ya estudiando de a poco."
+        j "Las remediales a veces son difíciles, así que te recomiendo prepararte desde ya estudiando de a poco."
     else:
-        t "Las remediales a veces son dificiles, asi que te recomiendo prepararte desde ya estudiando de a poco."
-    a "Gracias por el consejo, lo tomare en cuenta"
+        t "Las remediales a veces son difíciles, así que te recomiendo prepararte desde ya estudiando de a poco."
+    a "Gracias por el consejo, lo tomaré en cuenta"
 label DIA2_DES5:
     if Ruta_tutor == 1:
         show kevin feliz at mitad_centro
-        t "A todo esto, sabes cuales son tus metas?"
-        a "Huh...? A que te refieres?"
-        t "Tipo, porque te metiste a la carrera? Que meta quieres cumplir?"
+        t "A todo esto, ¿sabes cuáles son tus metas?"
+        a "¿Eh...? ¿A qué te refieres?"
+        t "Tipo, por qué te metiste a la carrera? ¿Que meta quieres cumplir?"
     elif Voley == 1:
         show felipe feliz at mitad_centro
-        f "A todo esto, sabes cuales son tus metas?"
-        a "Huh...? A que te refieres?"
-        f "Tipo, porque te metiste a la carrera? Que meta quieres cumplir?"
+        f "A todo esto, ¿sabes cuáles son tus metas?"
+        a "¿Eh...? ¿A qué te refieres?"
+        f "Tipo, por qué te metiste a la carrera? ¿Que meta quieres cumplir?"
     else:
         show juan feliz at mitad_centro
-        j "A todo esto, sabes cuales son tus metas?"
-        a "Huh...? A que te refieres?"
-        j "Tipo, porque te metiste a la carrera? Que meta quieres cumplir?"
+        j "A todo esto, ¿sabes cuáles son tus metas?"
+        a "¿Eh...? ¿A qué te refieres?"
+        j "Tipo, por qué te metiste a la carrera? ¿Que meta quieres cumplir?"
     menu DIA2_DEC7:
         set menuset
         "Huh... ¿Que le digo?"
@@ -919,71 +919,71 @@ label DIA2_DES5:
         "La verdad es que me meti a la carrera porque eh escuchado que pagan bien.":
             if Ruta_tutor == 1:
                 t "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien."
-                t "Pero igual! Es bueno que tengas una meta, Espero puedas cumplirla!"
-                a "Jeje! Muchas gracias!"
-                t "Bueno, Tengo cosas que hacer. Nos vemos!"
-                a "Ah! Claro, nos vemos!"
+                t "¡Pero igual! Es bueno que tengas una meta, ¡Espero puedas cumplirla!"
+                a "¡Jeje! ¡Muchas gracias!"
+                t "Bueno, Tengo cosas que hacer. ¡Nos vemos!"
+                a "Ah! Claro, ¡nos vemos!"
                 hide kevin feliz with dissolve
                 narrator "Luego de eso, el tutor se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
             elif Voley == 1:
                 f "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien."
-                f "Pero igual! Es bueno que tengas una meta, Espero puedas cumplirla!"
-                a "Jeje! Muchas gracias!"
+                f "¡Pero igual! Es bueno que tengas una meta, ¡Espero puedas cumplirla!"
+                a "¡Jeje! ¡Muchas gracias!"
                 jump SALTA
             else:
                 j "No creo que ese sea un buen motivo ni meta, pero en algunos casos si pagan bien."
-                j "Pero igual! Es bueno que tengas una meta, Espero puedas cumplirla!"
-                a "Jeje! Muchas gracias!"
-                j "Bueno, Tengo cosas que hacer. Nos vemos!"
-                a "Ah! Claro, nos vemos!"
+                j "¡Pero igual! Es bueno que tengas una meta, ¡Espero puedas cumplirla!"
+                a "¡Jeje! ¡Muchas gracias!"
+                j "Bueno, Tengo cosas que hacer. ¡Nos vemos!"
+                a "Ah! Claro, ¡nos vemos!"
                 hide juan feliz with dissolve
                 narrator "Luego de eso, el jefe de carrera se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
         "Si, tengo muy claras mis metas para ahora y el futuro":
             $ act_m = act_m+1
             if Ruta_tutor == 1:
-                t "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho."
-                a "Claro! Ya se lo que quiero!"
-                t "Jaja! Eso es bueno."
-                t "Bueno, Tengo cosas que hacer. Nos vemos!"
-                a "Ah! Claro, nos vemos!"
+                t "Eso es muy bueno, ¡tener asi de claras tus metas te va a ayudar mucho!"
+                a "¡Claro! ¡Ya se lo que quiero!"
+                t "¡Jaja! Eso es bueno."
+                t "Bueno, Tengo cosas que hacer. ¡Nos vemos!"
+                a "Ah! Claro, ¡nos vemos!"
                 hide kevin feliz with dissolve
                 narrator "Luego de eso, el tutor se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
             elif Voley == 1:
-                f "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho!"
-                a "Claro! Ya se lo que quiero!"
-                f "Jaja! Eso es bueno."
+                f "Eso es muy bueno, ¡tener asi de claras tus metas te va a ayudar mucho!"
+                a "¡Claro! ¡Ya se lo que quiero!"
+                f "¡Jaja! Eso es bueno."
                 jump SALTA
             else:
-                j "Eso es muy bueno, tener asi de claras tus metas te va a ayudar mucho."
-                a "Claro! Ya se lo que quiero!"
-                j "Jaja! Eso es bueno."
-                j "Bueno, Tengo cosas que hacer. Nos vemos!"
-                a "Ah! Claro, nos vemos!"
+                j "Eso es muy bueno, ¡tener asi de claras tus metas te va a ayudar mucho!"
+                a "¡Claro! ¡Ya se lo que quiero!"
+                j "¡Jaja! Eso es bueno."
+                j "Bueno, Tengo cosas que hacer. ¡Nos vemos!"
+                a "Ah! Claro, ¡nos vemos!"
                 hide juan feliz with dissolve
                 narrator "Luego de eso, el jefe de carrera se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
         "La verdad es que no tengo tanta seguridad de mis metas, me meti a la carrera porque es la que más me llamo la atención":
             if Ruta_tutor == 1:
                 t "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas."
-                t "Te recomiendo seguir buscando para que definas lo que quieras hacer!"
-                a "Entiendo. Muchas gracias por el consejo!"
-                t "Jaja! Para eso estamos!"
-                t "Bueno, Tengo cosas que hacer. Nos vemos!"
-                a "Ah! Claro, nos vemos!"
+                t "¡Te recomiendo seguir buscando para que definas lo que quieras hacer!"
+                a "Entiendo. ¡Muchas gracias por el consejo!"
+                t "¡Jaja! ¡Para eso estamos!"
+                t "Bueno, Tengo cosas que hacer. ¡Nos vemos!"
+                a "¡Ah! Claro, ¡nos vemos!"
                 hide kevin feliz with dissolve
                 narrator "Luego de eso, el tutor se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
             elif Voley == 1:
                 f "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas."
-                f "Te recomiendo seguir buscando para que definas lo que quieras hacer!"
-                a "Entiendo. Muchas gracias por el consejo!"
-                f "Jaja! Para eso estamos!"
+                f "¡Te recomiendo seguir buscando para que definas lo que quieras hacer!"
+                a "Entiendo. ¡Muchas gracias por el consejo!"
+                f "¡Jaja! ¡Para eso estamos!"
                 jump SALTA
             else:
                 j "Hum… Eso no es muy bueno, puede que te aburras durante la carrera o incluso que en el proceso encuentres tus metas."
-                j "Te recomiendo seguir buscando para que definas lo que quieras hacer!"
-                a "Entiendo. Muchas gracias por el consejo!"
-                j "Jaja! Para eso estamos!"
-                j "Bueno, Tengo cosas que hacer. Nos vemos!"
-                a "Ah! Claro, nos vemos!"
+                j "¡Te recomiendo seguir buscando para que definas lo que quieras hacer!"
+                a "Entiendo. ¡Muchas gracias por el consejo!"
+                j "¡Jaja! ¡Para eso estamos!"
+                j "Bueno, Tengo cosas que hacer. ¡Nos vemos!"
+                a "Ah! Claro, ¡nos vemos!"
                 hide juan feliz with dissolve
                 narrator "Luego de eso, el jefe de carrera se fue caminando, Tu, por tu parte seguiste caminando hacia tu casa."
 
@@ -993,29 +993,29 @@ label fin:
     show bg pieza_noche with dissolve
     a "Fuah... Que cansancio tengo..."
     stop music fadeout 2.0
-    narrator "Decias, recostandote en la cama y cerrando tus ojos."
+    narrator "Decías, recostandote en la cama y cerrando tus ojos."
     show bg negro with dissolve
     show catalina feliz at fuera_izquierda_al_centro
-    c "Oye! Aun el juego no puede terminar sabes!"
+    c "¡Oye! ¡Aun el juego no puede terminar sabes!"
     play music "Resultados.mp3" loop
     show bg pieza_noche
-    a "UAH!? Catamaran!? Que haces aqui!?"
+    a "¿¡UAH!? ¿¡Catamaran!? ¿¡Que haces aqui!?"
     show catalina neutral
-    c "Que no es obvio?"
+    c "¿Que no es obvio?"
     show catalina feliz
-    c "Vengo a darte los resultados!"
-    a "Resultados...? Que estas hablando...?"
+    c "¡Vengo a darte los resultados!"
+    a "¿Resultados...? ¿Que estas hablando...?"
     show catalina incomodo
-    c "Ugh! No te hablo a ti."
+    c "¡Ugh! No te hablo a ti."
     show catalina feliz
-    c "Te hablo a TI!"
-    c "Si! Tu, jugador!"
-    a "Eh...? Que...?"
-    c "Dejame te enseño los resultados, vale?~"
+    c "¡Te hablo a TI!"
+    c "¡Si! ¡Tu, jugador!"
+    a "¿Eh...? ¿Que...?"
+    c "Dejame te enseño los resultados, ¿vale?~"
     scene bg cielo with dissolve
-    a "Wahh...! Donde estoy...!?"
+    a "¡Wahh...! ¿¡Donde estoy...!?"
     show catalina feliz at entrada_lenta_izquierda
-    c "Eso no importa. Lo que importa es esto! Mira atentamente!"
+    c "Eso no importa. ¡Lo que importa es esto! ¡Mira atentamente!"
     hide catalina feliz with dissolve
     show cuadrado at amongus
     centered "{color=#ffffff}¡Resultados!{/color}"
