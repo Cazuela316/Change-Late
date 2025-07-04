@@ -4,19 +4,19 @@ label voley:
     show felipe feliz at entrada_lenta_izquierda
     menu voley_1:
         set menuset
-        f "Oye! [Jugador]!, te gustaría venir conmigo al taller de vóley?"
+        f "¡Oye, [Jugador]!, ¿te gustaría venir conmigo al taller de vóley?"
 
         "No gracias, no estoy muy interesado en los deportes la verdad":
-            f "Esta bien! Entonces nos vemos luego"
+            f "¡Esta bien! Entonces nos vemos luego"
             $ Voley = Voley - 1
             show felipe neutral at salida_izquierda_lenta
-            narrator "Sin mas que hacer en la universidad. Empezaste irte a tu casa."
+            narrator "Sin más que hacer en la universidad. Empezaste a irte a tu casa."
             show bg camino with dissolve
-            narrator "Aunque justo de camino, te encuentras con una cara conocida!"
+            narrator "Aunque justo de camino, ¡te encuentras con una cara conocida!"
             a "Ese no es...?"
             jump saltito
-        "Bueno, te acompaño, así conozco más!":
-            f "Va! Vamos"
+        "Bueno, te acompaño, ¡así conozco más!":
+            f "¡Va! Vamos"
 label VO_DES1:
     narrator "Ambos caminan hasta el gimnasio sin decir nada."
     scene bg gym with dissolve
@@ -24,19 +24,19 @@ label VO_DES1:
     narrator "Despues de entrar, felipe te pregunta algo..."
     menu voley_2:
         set menuset
-        f "Oye, te caigo bien?"
+        f "Oye, ¿te caigo bien?"
 
         "Si, de hecho me caes bastante bien":
             show felipe feliz
-            f "Ah! Que alivio saberlo, jeje!"
+            f "¡Ah! Que alivio saberlo, ¡jeje!"
             $ Cha = Cha + 1
         "Super si, eres muy cool":
             show felipe feliz
-            f "Ah! Que alivio saberlo, jeje!"
+            f "¡Ah! Que alivio saberlo, ¡jeje!"
             $ Cha = Cha + 1
 label VO_DES2:
     narrator "Sin mas que decir, felipe saco de su mochila una pelota de voley y te la lanza."
-    f "Pues bueno! Juguemos de una buena vez!"
+    f "¡Pues bueno! ¡Juguemos de una buena vez!"
     a "Oof... Vale vale. Aunque te advierto que no soy bueno."
     narrator "Decias mientras te posicionabas para comenzar a jugar."
     narrator "Despues de estar jugando un rato..."
@@ -58,8 +58,8 @@ label SALTA:
     narrator "Hasta que fueron las 6 PM."
     f "Bueno, se esta haciendo tarde, creo que me voy ya"
     a "Hmm, bueno, entonces creo que tambien me ire antes de que se oscurezca mucho mas"
-    f "Bien! Nos vemos entonces [Jugador]!"
-    a "Nos vemos!"
+    f "¡Bien! Nos vemos entonces [Jugador]!"
+    a "¡Nos vemos!"
     narrator "Decias mientras se separaban, llendo por caminos distintos."
     jump fin
 
@@ -70,15 +70,15 @@ label sales_comprar:
         a "..."
         play audio "SFX_Shock.mp3" noloop
         a "¿¡LAS 3 DE LA TARDE?!"
-        a "Diablos… Me perdí todas mis clases!"
+        a "Diablos… ¡Me perdí todas mis clases!"
         narrator "Soltaste un largo suspiro."
         a "Bueno, supongo que si no fui a clase, deberia ir a comprarme algo con la baes..."
-        a "Tengo que aprovechar! Mañana vence despues de todo."
+        a "¡Tengo que aprovechar! Mañana vence despues de todo."
         narrator "Entonces empezaste a vestirte, tomaste una de tus bolsas reutilizables y fuiste de camino al supermercado."
         play music "BMG_tarde-noche.mp3" fadein 2.0 loop
         show bg camino with dissolve
         narrator "Estabas de camino al supermercado, hasta que viste a una cara conocida."
-        a "Ese no es...?"
+        a "¿Ese no es...?"
         jump saltito
 
 label fin2:
@@ -92,16 +92,16 @@ label fin2:
     a "Maldita sea… Me quede dormido de nuevo!"
     narrator "Soltaste un muy largo suspiro."
     a "Tsh… Supongo que podría ir a comprar cosas cocinar algo…"
-    a "Aghhh!!! Porque tuve que quedarme dormido denuevo...!!!"
+    a "¡¡¡Aghhh!!! ¡¡¡Porque tuve que quedarme dormido denuevo...!!!"
     show catalina feliz at fuera_izquierda_al_centro
-    c "Hehe! Eso te pasa por dormirte muy tarde!~"
-    a "...Eh!? Catamalan!? Que haces aqui...?"
+    c "¡Hehe! ¡Eso te pasa por dormirte muy tarde!~"
+    a "¿¡...Eh!? ¿¡Catamaran!? ¿Que haces aqui...?"
     show catalina neutral
     c "Bueno... Venia a darte tus resultados, pero..."
     show catalina feliz
-    c "No puedo entregarte los resultados, ya que no tengo nada que evaluar! Jaja!"
+    c "No puedo entregarte los resultados, ¡ya que no tengo nada que evaluar! ¡Jaja!"
     a "Umh... Supongo que a la proxima deberia ser tener mas responsabilidad..."
-    c "Sipi, Bueno... No tengo nada mas que hacer aqui. Asi que... Nos vemos!"
+    c "Sipi, Bueno... No tengo nada mas que hacer aqui. Asi que... ¡Nos vemos!"
     a "Eh... Adios..."
     show catalina feliz at salida_izquierda_lenta
     narrator "Decia mientras catamalan se iba por la puerta principal de la casa."
@@ -109,5 +109,5 @@ label fin2:
     a "Bueno. Supongo que seguire durmiendo."
     show bg negro with dissolve
     narrator "Te decias a ti mismo, mientras volvias a cerrar los ojos."
-    centered "{color=#ffffff}Final Malo! Ganale a la flojera e intenta ir a clases!"
+    centered "{color=#ffffff}¡Final Malo! ¡Ganale a la flojera e intenta ir a clases!"
 
