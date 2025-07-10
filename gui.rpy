@@ -26,7 +26,7 @@ define config.check_conflicting_properties = True
 ## Los colores del texto de la interfaz
 
 ## El color enfatizado usado en la interfaz para subrayar texto.
-define gui.accent_color = '#336600'
+define gui.accent_color = '#336eff'
 
 ## El color del botón de texto cuando no está seleccionado ni enfocado.
 define gui.idle_color = '#707070'
@@ -35,7 +35,7 @@ define gui.idle_color = '#707070'
 define gui.idle_small_color = '#606060'
 
 ## El color usado en botones y barras que ganan foco.
-define gui.hover_color = '#336600'
+define gui.hover_color = '#336eff'
 
 ## El color del botón de texto seleccionado pero no enfocado. Un botón está
 ## seleccionado si indica el valor actual de la pantalla o preferencia.
@@ -46,8 +46,8 @@ define gui.insensitive_color = '#7070707f'
 
 ## Colores de la parte vacía de las barras. No se usan directamente, sino en la
 ## regeneración de las imágenes de barra.
-define gui.muted_color = '#84a366'
-define gui.hover_muted_color = '#adc199'
+define gui.muted_color = '#98b5ff'
+define gui.hover_muted_color = '#b0c6ff'
 
 ## Colores del texto del diálogo y menú.
 define gui.text_color = '#404040'
