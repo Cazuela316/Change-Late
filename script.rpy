@@ -1080,39 +1080,37 @@ label fin:
     show cuadrado at amongus
     centered "{color=#ffffff}¡Resultados!{/color}"
     if Cha>=-8 and Cha<=-5:
-        centered "{color=#ffffff}Cha:[Cha]/6\nNo es por sonar pesada... pero con tu forma de ser, se te puede resultar complicado hacer amigos.\n"
+        centered "{color=#ffffff}Da lo mejor de ti, con tiempo y calma verás avances en tus amistades, no siempre se da todo tan fácil, pero no hay que rendirse!.\n"
     elif Cha>=-4 and Cha <= -1:
-        centered "{color=#ffffff}Cha:[Cha]/6\nTe va a costar hacer amigos, te recomiendo mejorar tu forma de responder para que hacer amigos se te sea más fácil.\n"
+        centered "{color=#ffffff}Tus respuestas pueden influir mucho en cómo los demás te perciben.\n Si cuidas que la conversación sea mutua y escuchas con atención, hacer amigos puede volverse mucho más fácil.\n"
     elif Cha==1 or Cha==0:
-        centered "{color=#ffffff}Cha:[Cha]/6\nEs una persona neutra puede que le cueste hacer amigos o no, depende de cómo te sientas.\n"
+        centered "{color=#ffffff}Para hacer amigos, todo dependería de cómo te sientas con las personas a tu alrededor\n"
     elif Cha>=2 and Cha<=5:
-        centered "{color=#ffffff}Cha:[Cha]/6\nNo tendrás problemas en hacer amigos, pero con algunos tipos de persona no te puedes relacionar tan bien.\n"
+        centered "{color=#ffffff}Parece que te llevas bien con la mayoría, aunque con ciertas personas quizá no fluya tanto la conexión.\n"
     else:   
-        centered "{color=#ffffff}Cha:[Cha]/6\nCon tu forma de ser, no se le hará problema hacer amigos, asi que ve y cosigue un buen grupo de amigos!~\n"
+        centered "{color=#ffffff}Tu forma de ser tiene lo suyo para atraer buenas amistades. ¡Seguro encontrarás un grupo genial!~\n"
     
     if Res==-2 or Res==-1:
-        centered "{color=#ffffff}Res:[Res]/3\nTienes poco sentido de la responsabilidad, se te va a complicar adaptarte a muchas cosas en la universidad.\n"
-        centered "{color=#ffffff}Res:[Res]/3\nPero con esfuerzo, Puedes mejorarlo!.\n"
+        centered "{color=#ffffff}La universidad puede ser un desafío si no estás muy acostumbrado a organizarte...\n Pero con algo de esfuerzo, seguro le agarras el ritmo.\n"
     elif Res==0:
-        centered "{color=#ffffff}Res:[Res]/3\nTe va costar el cambio a la universidad."
-        centered "{color=#ffffff}Res:[Res]/3\nTe recomiendo mejorar tu sentido de la responsabilidad para adaptarte mejor a la universidad.\n"
+        centered "{color=#ffffff}El cambio a la vida universitaria puede sentirse pesado al principio.\n Si te organizas un poco mejor, todo se vuelve más llevadero.\n"
     elif Res==1 or Res==2:
-        centered "{color=#ffffff}Res:[Res]/3\nTienes un buen sentido de la responsabilidad, pero puedes mejorarlo aun mas!\n"
+        centered "{color=#ffffff}Te manejas bien con tus responsabilidades, y siempre hay espacio para afinarlo un poquito más.\n"
     else:
-        centered "{color=#ffffff}Res:[Res]/3\nTienes un fuerte sentido de la responsabilidad, no te constara tanto al cambio!~\n"
+        centered "{color=#ffffff}Parece que te organizas muy bien, así que el cambio a la universidad no debería darte mayores problemas. ~\n"
 
     if Int==-4 or Int==-3:
-        centered "{color=#ffffff}Int:[Int]/5\nAdaptarte te será difícil, pero si aprendes sobre hábitos de estudio y te mantienes constante puedes mejorarlo.\n"
+        centered "{color=#ffffff}Adaptarte puede ser un poco difícil al principio, pero con buenos hábitos y constancia, todo mejora.\n"
     elif Int==-2 or Int==-1:
-        centered "{color=#ffffff}Int:[Int]/5\nQuizas aun no estas perfectamente acostumbrado a la universidad, debes seguir estudiando con regularidad para adaptarte.\n"
+        centered "{color=#ffffff}Todavía estás agarrándole el ritmo a la universidad, pero si sigues estudiando con constancia, te vas a adaptar sin problema.\n"
     elif Int==0:
-        centered "{color=#ffffff}Int:[Int]/5\nEres una persona  que tiene potencial pero que quizás no lo intenta lo suficiente.\n"
+        centered "{color=#ffffff}Tienes mucho potencial. Solo falta que te animes a dar ese empujoncito extra.\n"
     elif Int==1 or Int==2:
-        centered "{color=#ffffff}Int:[Int]/5\nSabes algunas cosas pero es importante siempre aprender más.\n"
+        centered "{color=#ffffff}Tienes una buena base, y siempre está bien seguir aprendiendo un poco más cada día.\n"
     elif Int==3 or Int==4:
-        centered "{color=#ffffff}Int:[Int]/5\nEres bastante inteligente, si estudias usualmente tu adaptación estará casi asegurada.\n"
+        centered "{color=#ffffff}Eres muy capaz, y con un poco de estudio constante, adaptarte no debería ser un problema.\n"
     else: 
-        centered "{color=#ffffff}Int:[Int]/5\nEres muy inteligente, no deberías tener problemas adaptándose mientras tengas un poco de cuidado.\n"
+        centered "{color=#ffffff}Tienes mucha cabeza, así que mientras te mantengas atento, todo debería irte bien.\n"
 
     if Intro>Extro:
         centered "{color=#ffffff}Intro:[Intro]\nEres una persona muy introvertida, puede que se te haga problemas hacer amigos, pero si es que te determinas a ello, podrás lograrlo!\n"
